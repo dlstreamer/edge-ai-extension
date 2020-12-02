@@ -2,6 +2,8 @@
 	"type": "GStreamer",
 	"template": ["appsrc name=source",
 				" ! gvadetect model-instance-id=person_vehicle_bike_detection model={models[person_vehicle_bike_detection][1][network]} model-proc={models[person_vehicle_bike_detection][1][proc]} name=detection",
+				" ! tee name = t ! queue ! gvawatermark ! videoconvert ! jpegenc",
+				" ! multifilesink name=filesink t. ! queue",
 				" ! appsink name=destination"],
 	"description": "Object Detection using gstreamer gvadetect element, check more about gvadetect at https://github.com/openvinotoolkit/dlstreamer_gst/wiki/gvadetect",
 	"parameters": {
@@ -70,6 +72,14 @@
 			"threshold": {
 				"element": "detection",
 				"type": "number"
+			},
+			"location": {
+				"element": "filesink",
+				"type":"string"
+			},
+			"max-files": {
+				"element": "filesink",
+				"type":"integer"
 			}
 		}
 	}

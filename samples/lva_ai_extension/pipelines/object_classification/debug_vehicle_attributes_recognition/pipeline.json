@@ -3,6 +3,8 @@
 	"template": ["appsrc name=source",
 				" ! gvadetect model-instance-id=person_vehicle_bike_detection model={models[person_vehicle_bike_detection][1][network]} model-proc={models[person_vehicle_bike_detection][1][proc]} name=detection",
 				" ! gvaclassify model-instance-id=vehicle_attributes_recognition model={models[vehicle_attributes_recognition][1][network]} model-proc={models[vehicle_attributes_recognition][1][proc]} name=classification",
+				" ! tee name = t ! queue ! gvawatermark ! videoconvert ! jpegenc",
+				" ! multifilesink name=filesink t. ! queue",
 				" ! appsink name=destination"],
 	"description": "Object Classification using gstreamer gvadetect & gvaclassify elements, check more about gvadetect at https://github.com/openvinotoolkit/dlstreamer_gst/wiki/gvadetect and gvaclassify at https://github.com/openvinotoolkit/dlstreamer_gst/wiki/gvaclassify",
 	"parameters": {
@@ -141,6 +143,14 @@
 			"reclassify-interval": {
 				"element": "classification",
 				"type": "integer"
+			},
+			"location": {
+				"element": "filesink",
+				"type":"string"
+			},
+			"max-files": {
+				"element": "filesink",
+				"type":"integer"
 			}
 		}
 	}
