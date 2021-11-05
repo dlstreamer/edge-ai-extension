@@ -34,10 +34,11 @@ import sys
 from concurrent import futures
 import grpc
 import extension_pb2_grpc  # pylint: disable=import-error
-from media_graph_extension import MediaGraphExtension
-from common.exception_handler import log_exception
 from vaserving.vaserving import VAServing
 from vaserving.common.utils.logging import get_logger
+from media_graph_extension import MediaGraphExtension
+from common.exception_handler import log_exception
+
 
 PROGRAM_NAME = "DL Streamer Edge AI Extension"
 

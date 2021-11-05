@@ -5,5 +5,7 @@ pytest-html == 2.1.1
 pytest-timeout == 1.4.2
 pytest-repeat == 0.9.1
 requests == 2.23.0
-teamcity-messages == 1.28
+teamcity-messages == 1.29
 parse == 1.19.0
+pylint == 2.9.3
+bandit == 1.6.2

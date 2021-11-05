@@ -5,7 +5,7 @@ TESTS_DIR=$(dirname $ENTRYPOINT_DIR)
 SOURCE_DIR=$(dirname $TESTS_DIR)
 AVA_DIR=$(readlink -f "$SOURCE_DIR/..")
 
-RESULTS_DIR=${RESULTS_DIR:-"$TESTS_DIR/results"}
+RESULTS_DIR=${RESULTS_DIR:-"$TESTS_DIR/results/pytest"}
 PYTEST_ARGS=${PYTEST_ARGS:-"$@"}
 
 mkdir -p "$RESULTS_DIR"

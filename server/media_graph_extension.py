@@ -37,6 +37,11 @@ import uuid
 from enum import Enum
 import jsonschema
 
+from vaserving.vaserving import VAServing
+from vaserving.pipeline import Pipeline
+from vaserving.gstreamer_app_source import GvaFrameData
+from vaserving.common.utils.logging import get_logger
+
 from common.grpc_autogen import inferencing_pb2
 from common.grpc_autogen import media_pb2
 from common.grpc_autogen import extension_pb2
@@ -45,11 +50,6 @@ from common.grpc_autogen import extension_pb2_grpc
 from common.shared_memory import SharedMemoryManager
 from common.exception_handler import log_exception
 from common import extension_schema
-
-from vaserving.vaserving import VAServing
-from vaserving.pipeline import Pipeline
-from vaserving.gstreamer_app_source import GvaFrameData
-from vaserving.common.utils.logging import get_logger
 
 
 class TransferType(Enum):
