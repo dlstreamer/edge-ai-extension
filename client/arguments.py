@@ -30,6 +30,20 @@
 
 import sys
 import argparse
+from common.ava_api import AvaApi, AvaPort, get_ava_api
+
+
+class APIAction(argparse.Action): # pylint: disable=too-few-public-methods
+    def __call__(self, parser, namespace, value, option_string=None):
+        setattr(namespace, self.dest, value)
+        if get_ava_api(value) == AvaApi.HTTP:
+            if not getattr(namespace, 'pipeline_name'):
+                setattr(namespace, 'pipeline_name', "object_detection")
+            if not getattr(namespace, 'pipeline_version'):
+                setattr(namespace, 'pipeline_version', "person_vehicle_bike_detection")
+            if getattr(namespace, 'server_port') == AvaPort.GRPC:
+                setattr(namespace, 'server_port', AvaPort.HTTP)
+
 
 def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser = argparse.ArgumentParser(
@@ -37,6 +51,15 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         fromfile_prefix_chars="@",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
+    parser.add_argument(
+        "--api",
+        type=str.lower,
+        choices=[e.name.lower() for e in AvaApi],
+        help="API (grpc or http)",
+        default="grpc",
+        action=APIAction
+    )
+
     parser.add_argument(
         "-s",
         metavar=("grpc_server_address"),
@@ -46,17 +69,31 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     )
     parser.add_argument(
         "--server-ip",
-        dest="grpc_server_ip",
-        help="gRPC server ip.",
+        help="server ip.",
         default="localhost",
+        type=str,
+    )
+
+    parser.add_argument(
+        "--http-url",
+        help="http Full URL.",
+        type=str,
+    )
+
+    parser.add_argument(
+        "--http-image-encoding",
+        dest="encoding",
+        help=" HTTP image encoding",
+        default="jpeg",
+        type=str,
+        choices=["jpeg", "png", "bmp"],
     )
 
     parser.add_argument(
         "--server-port",
-        dest="grpc_server_port",
-        help="gRPC server port.",
+        help="server port.",
         type=int,
-        default=5001,
+        default=AvaPort.GRPC,
     )
 
     parser.add_argument(
@@ -70,7 +107,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--max-frames",
         metavar=("max_frames"),
-        dest="max_frames",
         help="How many frames to send from video.",
         type=int,
         default=sys.maxsize,
@@ -79,28 +115,24 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         "-l",
         "--loop-count",
         metavar=("loop_count"),
-        dest="loop_count",
         help="How many times to loop the source after it finishes.",
         type=int,
         default=0,
     )
     parser.add_argument(
         "--fps-interval",
-        dest="fps_interval",
         help="How often to report FPS (every N seconds)",
         type=int,
         default=2,
     )
     parser.add_argument(
         "--frame-rate",
-        dest="frame_rate",
         help="How many frames to send per second (-1 is no limit)",
         type=int,
         default=-1,
     )
     parser.add_argument(
         "--frame-queue-size",
-        dest="frame_queue_size",
         help="Max number of frames to buffer in client (0 is no limit)",
         type=int,
         default=200,
@@ -127,7 +159,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--pipeline-name",
         action="store",
-        dest="pipeline_name",
         help="name of the pipeline to run",
         type=str,
         default="",
@@ -136,8 +167,7 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--pipeline-version",
         action="store",
-        dest="pipeline_version",
-        help="name of the pipeline to run",
+        help="version of the pipeline to run",
         type=str,
         default="",
     )
@@ -145,7 +175,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--pipeline-parameters",
         action="store",
-        dest="pipeline_parameters",
         type=str,
         default="",
     )
@@ -153,7 +182,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--pipeline-extensions",
         action="store",
-        dest="pipeline_extensions",
         type=str,
         default="",
     )
@@ -161,7 +189,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--frame-destination",
         action="store",
-        dest="frame_destination",
         type=str,
         default="",
     )
@@ -169,7 +196,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--scale-factor",
         action="store",
-        dest="scale_factor",
         help="scale factor for decoded images",
         type=float,
         default=1.0,
@@ -178,7 +204,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser.add_argument(
         "--extension-config",
         action="store",
-        dest="extension_config",
         help="extension config in .json file path or as string",
         default="",
     )  # nosec
@@ -189,6 +214,6 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     result = parser.parse_args(args)
     if not result.grpc_server_address:
         result.grpc_server_address = "{}:{}".format(
-            result.grpc_server_ip, result.grpc_server_port
+            result.server_ip, result.server_port
         )
     return result

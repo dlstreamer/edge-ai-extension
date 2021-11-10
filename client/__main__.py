@@ -30,18 +30,15 @@
 import logging
 import os
 import sys
-import queue
-import json
 import time
 import cv2
-import jsonschema
 
-from google.protobuf.json_format import MessageToDict
 from arguments import parse_args
-from media_stream_processor import MediaStreamProcessor
-from common.grpc_autogen import inferencing_pb2
+from grpc_client import GrpcClient
+from http_client import HttpClient
+from results_processor import ResultsProcessor
 from common.exception_handler import log_exception
-from common import extension_schema
+from common.ava_api import AvaApi, get_ava_api
 
 
 class VideoSource:
@@ -56,11 +53,6 @@ class VideoSource:
         if self._vid_cap is None or not self._vid_cap.isOpened():
             raise Exception("Error opening video source: {}".format(self._filename))
 
-    def dimensions(self):
-        width = int(self._vid_cap.get(cv2.CAP_PROP_FRAME_WIDTH) * self._scale_factor)
-        height = int(self._vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT) * self._scale_factor)
-        return width, height
-
     def get_frame(self):
         ret, frame = self._vid_cap.read()
         if ret:
@@ -68,7 +60,7 @@ class VideoSource:
             height = int(self._vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT) * self._scale_factor)
             dsize = (width, height)
             frame = cv2.resize(frame, dsize)
-            return frame.tobytes()
+            return frame
         self._loop_count -= 1
         if self._loop_count > 0:
             self._open_video_source()
@@ -78,7 +70,7 @@ class VideoSource:
                 height = int(self._vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT) * self._scale_factor)
                 dsize = (width, height)
                 frame = cv2.resize(frame, dsize)
-                return frame.tobytes()
+                return frame
         return None
 
     def close(self):
@@ -95,73 +87,6 @@ def _log_options(args):
         logging.info("{} == {}".format(arg, getattr(args, arg)))
         logging.info(banner)
 
-def _log_entity(inference):
-    tag = inference.entity.tag
-    box = inference.entity.box
-    attributes = []
-    if inference.inference_id:
-        attribute_string = "{}: {}".format('inferenceId', inference.inference_id)
-        attributes.append(attribute_string)
-    if inference.subtype:
-        attribute_string = "{}: {}".format('subtype', inference.subtype)
-        attributes.append(attribute_string)
-    if inference.entity.id:
-        attribute_string = "{}: {}".format('id', inference.entity.id)
-        attributes.append(attribute_string)
-    for attribute in inference.entity.attributes:
-        attribute_string = "{}: {}".format(attribute.name, attribute.value)
-        attributes.append(attribute_string)
-    logging.info(
-        "ENTITY - {} ({:.2f}) [{:.2f}, {:.2f}, {:.2f}, {:.2f}] {}".format(
-            tag.value, tag.confidence, box.l, box.t, box.w, box.h, attributes
-        )
-    )
-
-def _log_event(inference):
-    name = inference.event.name
-    attributes = []
-    if inference.inference_id:
-        attribute_string = "{}: {}".format('inferenceId', inference.inference_id)
-        attributes.append(attribute_string)
-    if inference.subtype:
-        attribute_string = "{}: {}".format('subtype', inference.subtype)
-        attributes.append(attribute_string)
-    if inference.related_inferences:
-        attribute_string = "{}: {}".format('relatedInferences', inference.related_inferences)
-        attributes.append(attribute_string)
-    for attribute in inference.event.properties:
-        attribute_string = "{}: {}".format(attribute, inference.event.properties[attribute])
-        attributes.append(attribute_string)
-    logging.info(
-        "EVENT - {}: {}".format(name, attributes)
-    )
-
-def _log_classification(inference):
-    tag = inference.classification.tag
-    logging.info("CLASSIFICATION - {} ({:.2f})".format(tag.value, tag.confidence))
-
-def _log_result(response, output, log_result=True):
-    if not log_result:
-        return
-    if not response:
-        return
-    logging.debug("Inference result {}".format(response.ack_sequence_number))
-    for inference in response.media_sample.inferences:
-        if inference.type == inferencing_pb2.Inference.InferenceType.ENTITY: # pylint: disable=no-member
-            _log_entity(inference)
-
-        if inference.type == inferencing_pb2.Inference.InferenceType.EVENT: # pylint: disable=no-member
-            _log_event(inference)
-
-        if inference.type == inferencing_pb2.Inference.InferenceType.CLASSIFICATION: # pylint: disable=no-member
-            _log_classification(inference)
-
-    # default value field is used to avoid not including values set to 0,
-    # but it also causes empty lists to be included
-    returned_dict = MessageToDict(
-        response.media_sample, including_default_value_fields=True
-    )
-    output.write("{}\n".format(json.dumps(returned_dict)))
 
 def _log_fps(start_time, frames_received, prev_fps_delta, fps_interval):
     delta = int(time.time() - start_time)
@@ -174,141 +99,79 @@ def _log_fps(start_time, frames_received, prev_fps_delta, fps_interval):
         return delta
     return prev_fps_delta
 
-def validate_extension_config(extension_config):
-    try:
-        validator = jsonschema.Draft4Validator(schema=extension_schema.extension_config,
-                                               format_checker=jsonschema.draft4_format_checker)
-        validator.validate(extension_config)
-    except jsonschema.exceptions.ValidationError as error:
-        raise Exception("Error validating pipeline request: {},: error: {}"
-                        .format(extension_config, error.message)) from error
-
-def create_extension_config(args):
-    extension_config = {}
-    pipeline_config = {}
-    if args.pipeline_name:
-        pipeline_config["name"] = args.pipeline_name
-    if args.pipeline_version:
-        pipeline_config["version"] = args.pipeline_version
-    if args.pipeline_parameters:
-        try:
-            pipeline_config["parameters"] = json.loads(args.pipeline_parameters)
-        except ValueError as error:
-            raise Exception("Issue loading pipeline parameters: {}".format(args.pipeline_parameters)) from error
-    if args.frame_destination:
-        try:
-            pipeline_config["frame-destination"] = json.loads(args.frame_destination)
-        except ValueError as error:
-            raise Exception("Issue loading frame destination: {}".format(args.frame_destination)) from error
-    if args.pipeline_extensions:
-        try:
-            pipeline_config["pipeline_extensions"] = json.loads(args.pipeline_extensions)
-        except ValueError as error:
-            raise Exception("Issue loading pipeline extensions: {}".format(args.pipeline_extensions)) from error
-
-    if len(pipeline_config) > 0:
-        extension_config.setdefault("pipeline", pipeline_config)
-
-    return extension_config
 
 def main():
-    msp = None
     frame_source = None
+    client = None
     args = parse_args()
     _log_options(args)
     try:
         frame_delay = 1 / args.frame_rate if args.frame_rate > 0 else 0
-        frame_queue = queue.Queue(args.frame_queue_size)
-        result_queue = queue.Queue()
         frames_sent = 0
-        frames_received = 0
         prev_fps_delta = 0
         start_time = None
         frame_source = VideoSource(args.sample_file, args.loop_count, args.scale_factor)
-        width, height = frame_source.dimensions()
+
         image = frame_source.get_frame()
 
-        if not image:
+        if image is None:
             raise Exception("Error getting frame from video source: {}".format(args.sample_file))
 
-        extension_config = {}
-        if args.extension_config:
-            if args.extension_config.endswith(".json"):
-                with open(args.extension_config, "r") as config:
-                    extension_config = json.loads(config.read())
-            else:
-                extension_config = json.loads(args.extension_config)
+        height, width, _ = image.shape
+
+        if get_ava_api(args.api) == AvaApi.GRPC:
+            client = GrpcClient(args, width, height, image.size)
         else:
-            extension_config = create_extension_config(args)
-
-        validate_extension_config(extension_config)
-        logging.info("Extension Configuration: {}".format(extension_config))
-
-        msp = MediaStreamProcessor(
-            args.grpc_server_address,
-            args.use_shared_memory,
-            args.frame_queue_size,
-            len(image),
-        )
-
-        msp.start(width, height, frame_queue, result_queue, json.dumps(extension_config))
-
+            client = HttpClient(args, image.size)
+        result_processor = ResultsProcessor()
         with open(args.output_file, "w") as output:
             start_time = time.time()
-            result = True
-            while image and result and frames_sent < args.max_frames:
-                frame_queue.put(image)
-                while not result_queue.empty():
-                    result = result_queue.get()
-                    if isinstance(result, Exception):
-                        raise result
-                    frames_received += 1
-                    prev_fps_delta = _log_fps(
-                        start_time, frames_received, prev_fps_delta, args.fps_interval
-                    )
-                    _log_result(result, output)
+            while image is not None and frames_sent < args.max_frames:
+                client.put_frame(image)
+                frames_sent += 1
+                while client.have_result():
+                    result_processor.process(client.get_result(), output)
+                prev_fps_delta = _log_fps(
+                    start_time, result_processor.results_received(), prev_fps_delta, args.fps_interval
+                )
                 image = frame_source.get_frame()
                 time.sleep(frame_delay)
-                frames_sent += 1
 
-            if result:
-                frame_queue.put(None)
-                result = result_queue.get()
+            client.put_frame(None)
+            result = client.get_result()
             while result:
-                if isinstance(result, Exception):
-                    raise result
-                frames_received += 1
+                result_processor.process(result, output)
+                result = client.get_result()
                 prev_fps_delta = _log_fps(
-                    start_time, frames_received, prev_fps_delta, args.fps_interval
+                    start_time, result_processor.results_received(), prev_fps_delta, args.fps_interval
                 )
-                _log_result(result, output)
-                result = result_queue.get()
 
+        results_received = result_processor.results_received()
         delta = time.time() - start_time
         logging.info(
             "Start Time: {} End Time: {} Frames: Tx {} Rx {} FPS: {}".format(
                 start_time,
                 start_time + delta,
                 frames_sent,
-                frames_received,
-                (frames_received / delta) if delta > 0 else None,
+                results_received,
+                (results_received / delta) if delta > 0 else None,
             )
         )
 
-        if frames_sent != frames_received:
+        if frames_sent != results_received:
             raise Exception("Sent {} requests, received {} responses".format(
-                frames_sent, frames_received))
+                frames_sent, results_received))
 
         return True
-
     except (KeyboardInterrupt, SystemExit, Exception):
         log_exception()
         return False
     finally:
-        if msp:
-            msp.stop()
+        if client is not None:
+            client.stop()
         if frame_source:
             frame_source.close()
+
 
 if __name__ == "__main__":
     # Set logging parameters

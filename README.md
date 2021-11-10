@@ -77,9 +77,9 @@ To send a test frame to the microservice and receive `object_detection` results 
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: =======================
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: grpc_server_address == localhost:5001
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: =======================
-[AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: grpc_server_ip == localhost
+[AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: server_ip == localhost
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: =======================
-[AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: grpc_server_port == 5001
+[AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: server_port == 5001
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: =======================
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: sample_file == /home/edge-ai-extension/sampleframes/sample01.png
 [AIXC] [2021-01-22 15:28:06,957] [MainThread  ] [INFO]: =======================
