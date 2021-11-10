@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2019 Intel Corporation.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
 ARG BASE=video-analytics-serving-runtime
 FROM $BASE
 
