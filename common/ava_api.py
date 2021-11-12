@@ -27,7 +27,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE
 """
-from enum import Enum,IntEnum
+from enum import IntEnum
 
 def get_ava_api(value):
     return AvaApi[value.upper()]
@@ -37,6 +37,6 @@ class AvaApi(IntEnum):
     HTTP = 1
 
 
-class AvaPort(Enum):
+class AvaPort(IntEnum):
     GRPC = 5001
     HTTP = 8000
