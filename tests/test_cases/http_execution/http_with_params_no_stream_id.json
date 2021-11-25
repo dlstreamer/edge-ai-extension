@@ -1,8 +1,7 @@
 {
     "server_params": {
-        "max_running_pipelines":10,
         "sleep_period":0.25,
-        "port":5001
+        "protocol": "http"
     },
     "client": [
         {
@@ -11,19 +10,16 @@
                     "name":"object_detection",
                     "version":"person_vehicle_bike_detection",
                     "parameters": {
-                        "detection-model-instance-id": "object_detection_person_vehicle_bike_detection_cpu_multiple_clients"
+                        "detection-model-instance-id": "object_detection_person_vehicle_bike_detection"
                     }
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",
-                "output_location":"",
-                "shared_memory":true,
-                "loop_count":100,
+                "loop_count":10,
                 "sleep_period":0.25,
-                "port":5001,
+                "protocol": "http",
                 "timeout":300,
-                "expected_return_code":0
-            },
-            "num_of_concurrent_clients":10
+                "expected_return_code":1
+            }
         }
     ],
     "golden_results":false

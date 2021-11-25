@@ -28,22 +28,12 @@
 * SOFTWARE
 '''
 
+import os
 import sys
+import json
 import argparse
-from common.ava_api import AvaApi, AvaPort, get_ava_api
-
-
-class APIAction(argparse.Action): # pylint: disable=too-few-public-methods
-    def __call__(self, parser, namespace, value, option_string=None):
-        setattr(namespace, self.dest, value)
-        if get_ava_api(value) == AvaApi.HTTP:
-            if not getattr(namespace, 'pipeline_name'):
-                setattr(namespace, 'pipeline_name', "object_detection")
-            if not getattr(namespace, 'pipeline_version'):
-                setattr(namespace, 'pipeline_version', "person_vehicle_bike_detection")
-            if getattr(namespace, 'server_port') == AvaPort.GRPC:
-                setattr(namespace, 'server_port', AvaPort.HTTP)
-
+from common.util import validate_extension_config
+from common import constants
 
 def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     parser = argparse.ArgumentParser(
@@ -51,13 +41,13 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         fromfile_prefix_chars="@",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
+
     parser.add_argument(
-        "--api",
+        "--protocol",
         type=str.lower,
-        choices=[e.name.lower() for e in AvaApi],
-        help="API (grpc or http)",
-        default="grpc",
-        action=APIAction
+        choices=[constants.GRPC_PROTOCOL, constants.HTTP_PROTOCOL],
+        help="Extension protocol (grpc or http)",
+        default=os.getenv("PROTOCOL", "grpc").lower(),
     )
 
     parser.add_argument(
@@ -81,6 +71,13 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     )
 
     parser.add_argument(
+        "--http-stream-id",
+        help="stream id to assign pipeline to",
+        dest="stream_id",
+        type=str,
+    )
+
+    parser.add_argument(
         "--http-image-encoding",
         dest="encoding",
         help=" HTTP image encoding",
@@ -90,10 +87,17 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     )
 
     parser.add_argument(
-        "--server-port",
-        help="server port.",
+        "--grpc-port",
+        help="grpc server port.",
         type=int,
-        default=AvaPort.GRPC,
+        default=int(os.getenv("GRPC_PORT", constants.GRPC_PORT)),
+    )
+
+    parser.add_argument(
+        "--http-port",
+        help="http server port.",
+        type=int,
+        default=int(os.getenv("HTTP_PORT", constants.HTTP_PORT)),
     )
 
     parser.add_argument(
@@ -161,7 +165,7 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         action="store",
         help="name of the pipeline to run",
         type=str,
-        default="",
+        default="object_detection",
     )
 
     parser.add_argument(
@@ -169,7 +173,7 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         action="store",
         help="version of the pipeline to run",
         type=str,
-        default="",
+        default="person_vehicle_bike_detection",
     )
 
     parser.add_argument(
@@ -214,6 +218,57 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
     result = parser.parse_args(args)
     if not result.grpc_server_address:
         result.grpc_server_address = "{}:{}".format(
-            result.server_ip, result.server_port
+            result.server_ip, result.grpc_port
         )
     return result
+
+
+def _create_extension_config(args):
+    extension_config = {}
+    pipeline_config = {}
+    if args.pipeline_name:
+        pipeline_config["name"] = args.pipeline_name
+    if args.pipeline_version:
+        pipeline_config["version"] = args.pipeline_version
+    if args.pipeline_parameters:
+        try:
+            pipeline_config["parameters"] = json.loads(
+                args.pipeline_parameters)
+        except ValueError as err:
+            raise Exception("Issue loading pipeline parameters: {}".format(
+                args.pipeline_parameters)) from err
+    if args.frame_destination:
+        try:
+            pipeline_config["frame-destination"] = json.loads(
+                args.frame_destination)
+        except ValueError as err:
+            raise Exception("Issue loading frame destination: {}".format(
+                args.frame_destination)) from err
+    if args.pipeline_extensions:
+        try:
+            pipeline_config["extensions"] = json.loads(
+                args.pipeline_extensions)
+        except ValueError as err:
+            raise Exception("Issue loading pipeline extensions: {}".format(
+                args.pipeline_extensions)) from err
+
+    if len(pipeline_config) > 0:
+        extension_config.setdefault("pipeline", pipeline_config)
+
+    return extension_config
+
+
+def get_extension_config(args):
+    extension_config = {}
+    if args.extension_config:
+        if args.extension_config.endswith(".json"):
+            with open(args.extension_config, "r") as config:
+                extension_config = json.loads(config.read())
+        else:
+            extension_config = json.loads(args.extension_config)
+    else:
+        extension_config = _create_extension_config(args)
+
+    validate_extension_config(extension_config)
+
+    return extension_config

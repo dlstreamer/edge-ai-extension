@@ -1,9 +1,5 @@
 {
     "server_params": {
-        "pipeline": {
-            "name": "action_recognition",
-            "version": "general"
-        },
         "max_running_pipelines": 10,
         "sleep_period": 0.25,
         "port": 5001
@@ -11,6 +7,10 @@
     "client": [
         {
             "params": {
+                "pipeline": {
+                    "name": "action_recognition",
+                    "version": "general"
+                },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
                 "output_location": "/tmp/tmpgptydh4p/output0.jsonl",
                 "shared_memory": true,
@@ -1907,10 +1907,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         }
     ]
 }

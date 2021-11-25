@@ -1,10 +1,8 @@
 import os
 import tempfile
-import pytest
 import copy
 import json
-import time
-import cv2
+import utils
 
 def count_events(results, event_type, valid_event_names):
     print("Counting events of type {} with a name in {}".format(event_type, valid_event_names))
@@ -62,7 +60,7 @@ def test_algorithm(helpers, test_case, test_filename, generate):
         else:
             assert actual_return_code == expected_return_code
 
-    helpers.validate_output_against_schema(output_file)
+    utils.validate_output_against_schema(output_file)
     valid_event_names = get_event_names(client_params)
     event_count, total_count = count_events(output_file, client_params["expected_event_type"], valid_event_names)
     print("event_count = {}, total_count = {}".format(event_count, total_count))

@@ -31,16 +31,16 @@
 import argparse
 import os
 import sys
-from concurrent import futures
-import grpc
-import extension_pb2_grpc  # pylint: disable=import-error
 from vaserving.vaserving import VAServing
-from vaserving.common.utils.logging import get_logger
-from media_graph_extension import MediaGraphExtension
+from grpc_server import GrpcServer
+from http_server import HttpServer
+from common import logging, constants
 from common.exception_handler import log_exception
 
 
+
 PROGRAM_NAME = "DL Streamer Edge AI Extension"
+
 
 def parse_args(args=None, program_name=PROGRAM_NAME):
 
@@ -51,49 +51,44 @@ def parse_args(args=None, program_name=PROGRAM_NAME):
     )
 
     parser.add_argument(
-        "-p",
+        "--protocol",
+        type=str.lower,
+        choices=[constants.GRPC_PROTOCOL, constants.HTTP_PROTOCOL],
+        help="Extension protocol (grpc or http)",
+        default=os.getenv("PROTOCOL", "grpc").lower(),
+    )
+
+    parser.add_argument(
+        "--grpc-port",
         action="store",
-        dest="port",
         help="Port number to serve gRPC server",
         type=int,
-        default=int(os.getenv("PORT", "5001")),
+        default=int(os.getenv("GRPC_PORT", constants.GRPC_PORT)),
     )
 
     parser.add_argument(
-        "--pipeline-name",
+        "--http-port",
         action="store",
-        dest="pipeline_name",
-        help="name of the pipeline to run",
-        type=str,
-        default=os.getenv("PIPELINE_NAME", "object_detection"),
-    )
-
-    parser.add_argument(
-        "--pipeline-version",
-        action="store",
-        dest="pipeline_version",
-        help="name of the pipeline to run",
-        type=str,
-        default=os.getenv("PIPELINE_VERSION", "person_vehicle_bike_detection"),
-    )
-    parser.add_argument(
-        "--debug",
-        action="store_true",
-        dest="debug",
-        help="Use debug pipeline",
-        default=(os.getenv("DEBUG_PIPELINE", None) is not None),
+        help="Port number to serve HTTP server",
+        type=int,
+        default=int(os.getenv("HTTP_PORT", constants.HTTP_PORT)),
     )
 
     parser.add_argument(
         "--max-running-pipelines",
         action="store",
-        dest="max_running_pipelines",
         type=int,
         default=int(os.getenv("MAX_RUNNING_PIPELINES", "10")),
     )
+    parser.add_argument(
+        "--log-level",
+        action="store",
+        choices=['INFO', 'DEBUG'],
+        default=os.getenv('EXTENSION_LOG_LEVEL', 'INFO'))
 
     if isinstance(args, dict):
-        args = ["--{}={}".format(key, value) for key, value in args.items() if value]
+        args = ["--{}={}".format(key, value)
+                for key, value in args.items() if value]
 
     return parser.parse_known_args(args)
 
@@ -107,13 +102,13 @@ def append_default_server_args(va_serving_args, max_running_pipelines):
 if __name__ == "__main__":
 
     args, va_serving_args = parse_args()
-    logger = get_logger("Main")
+    logging.set_default_log_level(args.log_level)
+    logger = logging.get_logger("Main")
     server = None
     try:
         server_args = append_default_server_args(
             va_serving_args, args.max_running_pipelines
         )
-
         try:
             VAServing.start(server_args)
         except Exception as error:
@@ -121,34 +116,16 @@ if __name__ == "__main__":
             logger.error("Exception encountered during VAServing start")
             raise
 
-        if (
-                (args.pipeline_name and not args.pipeline_version)
-                or (not args.pipeline_name and args.pipeline_version)
-        ):
-            logger.error("Pipeline name or version set but not both")
-            raise ValueError('Pipeline name or version set but not both')
+        if args.protocol == constants.GRPC_PROTOCOL:
+            server = GrpcServer(args)
+        else:
+            server = HttpServer(args)
 
-        # create gRPC server and start running
-        server = grpc.server(
-            futures.ThreadPoolExecutor(max_workers=args.max_running_pipelines) # pylint: disable=consider-using-with
-        )
-        extension_pb2_grpc.add_MediaGraphExtensionServicer_to_server(
-            MediaGraphExtension(
-                args.pipeline_name,
-                args.pipeline_version,
-                args.debug,
-            ),
-            server,
-        )
-        server.add_insecure_port(f"[::]:{args.port}")
-        logger.info("Starting %s on port: %d", PROGRAM_NAME, args.port)
         server.start()
-        server.wait_for_termination()
-
     except (KeyboardInterrupt, SystemExit, Exception):
         log_exception()
         sys.exit(-1)
     finally:
         if server:
-            server.stop(None)
+            server.stop()
         VAServing.stop()

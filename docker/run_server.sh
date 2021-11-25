@@ -7,7 +7,7 @@ RUN_PREFIX=
 IMAGE=video-analytics-serving:0.6.1-dlstreamer-edge-ai-extension
 VOLUME_MOUNT=" -v /tmp:/tmp -v /dev/shm:/dev/shm "
 DOCKER_DIR=/home/edge-ai-extension
-MODE=SERVICE
+MODE=GRPC_PROTOCOL
 PORTS=
 DEVICES=
 ENTRYPOINT=
@@ -183,6 +183,18 @@ while [[ "$#" -gt 0 ]]; do
             error 'ERROR: "--entrypoint" requires a non-empty option argument.'
         fi
         ;;
+    --protocol)
+        if [ "$2" ]; then
+            ENTRYPOINT_ARGS+=" $1 $2 "
+            echo $2
+            if [ "$2" == http ]; then
+                MODE=HTTP_PROTOCOL
+            fi
+            shift
+        else
+            error 'ERROR: "--protocol" requires a non-empty option argument.'
+        fi
+        ;;
     --rtsp-port)
         if [ "$2" ]; then
             RTSP_PORT=$2
@@ -221,9 +233,13 @@ if [ "${MODE}" == "DEV" ]; then
         NETWORK="--network=host"
     fi
     PRIVILEGED="--privileged "
-elif [ "${MODE}" == "SERVICE" ]; then
+elif [ "${MODE}" == "GRPC_PROTOCOL" ]; then
     if [ -z "$PORTS" ]; then
         PORTS+="-p 5001:5001 "
+    fi
+elif [ "${MODE}" == "HTTP_PROTOCOL" ]; then
+    if [ -z "$PORTS" ]; then
+        PORTS+="-p 8000:8000 "
     fi
 else
     echo "Invalid Mode"

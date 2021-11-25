@@ -1,6 +1,6 @@
 {
 	"type": "GStreamer",
-	"template": ["appsrc name=source",
+	"template": ["appsrc name=source ! decodebin ! videoconvert",
 				" ! gvadetect model={models[person_vehicle_bike_detection][1][network]} name=detection",
 				" ! gvapython name=object-zone-count class=ObjectZoneCount module=/home/video-analytics-serving/extensions/spatial_analytics/object_zone_count.py",
 				" ! appsink name=destination"],

@@ -27,16 +27,16 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE
 """
-from enum import IntEnum
 
-def get_ava_api(value):
-    return AvaApi[value.upper()]
-
-class AvaApi(IntEnum):
-    GRPC = 0
-    HTTP = 1
+from abc import abstractmethod
 
 
-class AvaPort(IntEnum):
-    GRPC = 5001
-    HTTP = 8000
+class Server:
+
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass

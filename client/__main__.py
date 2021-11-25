@@ -38,7 +38,7 @@ from grpc_client import GrpcClient
 from http_client import HttpClient
 from results_processor import ResultsProcessor
 from common.exception_handler import log_exception
-from common.ava_api import AvaApi, get_ava_api
+from common import constants
 
 
 class VideoSource:
@@ -119,14 +119,14 @@ def main():
 
         height, width, _ = image.shape
 
-        if get_ava_api(args.api) == AvaApi.GRPC:
+        if args.protocol == constants.GRPC_PROTOCOL:
             client = GrpcClient(args, width, height, image.size)
         else:
-            client = HttpClient(args, image.size)
+            client = HttpClient(args)
         result_processor = ResultsProcessor()
         with open(args.output_file, "w") as output:
             start_time = time.time()
-            while image is not None and frames_sent < args.max_frames:
+            while image is not None and frames_sent <= args.max_frames:
                 client.put_frame(image)
                 frames_sent += 1
                 while client.have_result():

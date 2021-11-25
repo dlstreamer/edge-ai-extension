@@ -34,46 +34,6 @@
     "numerical_tolerance": 0.3,
     "results": [
         {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
             "inferences": [
                 {
                     "type": "ENTITY",
@@ -102,34 +62,6 @@
             "timestamp": "0"
         },
         {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
             "inferences": [
                 {
                     "type": "ENTITY",
@@ -156,10 +88,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         },
         {
             "inferences": [
@@ -610,14 +538,6 @@
             "timestamp": "0"
         },
         {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
             "inferences": [
                 {
                     "type": "ENTITY",
@@ -926,14 +846,6 @@
             "timestamp": "0"
         },
         {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
             "inferences": [
                 {
                     "type": "ENTITY",
@@ -1184,14 +1096,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         },
         {
             "inferences": [
@@ -1446,14 +1350,6 @@
             "timestamp": "0"
         },
         {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
             "inferences": [
                 {
                     "type": "ENTITY",
@@ -1648,86 +1544,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         }
     ]
 }

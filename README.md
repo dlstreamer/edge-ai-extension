@@ -119,11 +119,12 @@ The module can be configured using command line options or environment variables
 
 | Setting             | Command line option   | Environment variable | Default value    |
 |---------------------|-----------------------|----------------------|------------------|
-| gRPC port           | -p                    | PORT                 | 5001             |
-| RSTP Re-Streaming   | --enable-rtsp         | ENABLE_RTSP          | false            |
-| Pipeline name       | --pipeline-name       | PIPELINE_NAME        | object_detection |
-| Pipeline version    | --pipeline-version    | PIPELINE_VERSION     | person_vehicle_bike_detection |
-| Use debug pipeline  | --debug               | DEBUG_PIPELINE       |                   |
+| gRPC port           | --grpc-port           | GRPC_PORT            | 5001             |
+| HTTP port           | --http-port           | HTTP_PORT            | 8000             |
+| Extension Protocol  | --protocol            | PROTOCOL             | grpc             |
+| RTSP Re-Streaming   | --enable-rtsp         | ENABLE_RTSP          | false            |
+| Logging Level       | --log-level           | EXTENSION_LOG_LEVEL  | INFO             |
+
 
 ## Video Analytics Pipelines
 
@@ -149,14 +150,15 @@ There are three versions of the object zone count pipeline. They are all based o
 
 ## Extension Configuration
 
-The Azure Video Analyzer (AVA) Server supports the extension_configuration field in the [MediaStreamDescriptor message](https://raw.githubusercontent.com/Azure/video-analyzer/main/contracts/grpc/extension.proto#L69). This field contains a JSON string that must match the extension configuration schema. See example below. Note that pipeline name and version fields are required but parameters and frame-destination are optional.
+The Azure Video Analyzer (AVA) Server supports the extension_configuration field in the [MediaStreamDescriptor message](https://raw.githubusercontent.com/Azure/video-analyzer/main/contracts/grpc/extension.proto#L69). This field contains a JSON string that must match the extension configuration schema. See example below. Note that pipeline name and version fields are required but parameters, frame-destination and extensions are optional.
 ```
 {
     "pipeline": {
         "name": "object_detection",
         "version": "person_vehicle_bike_detection",
         "parameters": {},
-        "frame-destination": {}
+        "frame-destination": {},
+        "extensions":{}
     }
 }
 ```
@@ -243,35 +245,6 @@ This mode runs with files from the host, not the container, which is useful for 
 ./docker/run_server.sh --dev
 ```
 
-### Selecting Pipelines
->**Note:** These features are deprecated and will be removed in a future release. Please use extension configuration instead.
-
-Specify the default pipeline via command line and run the server
-
-```bash
-./docker/run_server.sh --pipeline-name object_classification --pipeline-version vehicle_attributes_recognition
-```
-
-Specify the default pipeline via environment variables and run the server
-```
-export PIPELINE_NAME=object_classification
-export PIPELINE_VERSION=vehicle_attributes_recognition
-./docker/run_server.sh
-```
-
-Notes:
-* If selecting a pipeline both name and version must be specified
-* The `--debug` option selects debug pipelines that watermark inference results and saves images in `/tmp/vaserving/{--pipeline-version}/{timestamp}/` and can also be set using the environment variable DEBUG_PIPELINE
-
-### Debug Mode
->**Note:** This feature is deprecated and will be removed in a future release. Please use RTSP re-streaming instead.
-
-Debug pipelines can be selected using the `--debug` command line parameter or setting the `DEBUG_PIPELINE` environment variable. Debug pipelines save watermarked frames to `/tmp/vaserving/{--pipeline-version}/{timestamp}/` as JPEG images.
-
-Run default pipeline in debug mode
-```bash
-./docker/run_server.sh --debug
-```
 
 # Spatial Analytics Pipelines
 ## Object Zone Count
@@ -374,7 +347,8 @@ Use the --help option to see how to use the script. All arguments are optional.
 All arguments are optional, usage is as follows
   [ -s : gRPC server address, defaults to None]
   [ --server-ip : Specify the server ip to connect to ] (defaults to 127.0.0.1)
-  [ --server-port : Specify the server port to connect to ] (defaults to 5001)
+  [ --grpc-port : Specify the grpc server port to connect to ] (defaults to 5001)
+  [ --http-port : Specify the http server port to connect to ] (defaults to 8000)
   [ --sample-file-path : Specify the sample file path to run] (defaults to sampleframes/sample01.png)
   [ --loop-count : How many times to loop the source after it finishes ]
   [ --number-of-streams : Specify number of streams (one client process per stream)]
@@ -384,11 +358,14 @@ All arguments are optional, usage is as follows
   [ --shared-memory : Enables and uses shared memory between client and server ] (defaults to off)
   [ --output-file-path : Specify the output file path to save inference results in jsonl format] (defaults to /tmp/results.jsonl)
   [ --extension-config : JSON string or file containing extension configuration]
-  [ --pipeline-name : Name of the pipeline to run]
-  [ --pipeline-version : Name of the pipeline version to run]
+  [ --pipeline-name : Name of the pipeline to run](defaults to object_detection)
+  [ --pipeline-version : Name of the pipeline version to run] (defaults to person_vehicle_bike_detection)
   [ --pipeline-parameters : Pipeline parameters]
   [ --pipeline-extensions : JSON string containing tags to be added to extensions field in results]
   [ --frame-destination : Frame destination for rtsp restreaming]
+  [ --http-image-encoding : Type of encoding to use when sending http request] (defaults to jpeg)
+  [ --http-url : Complete url path to send http request]
+  [ --http-stream-id : stream-id to map pipeline in serever, must specify when any of parameters, extensions or frame destination set ]
   [ --dev : Mount local source code] (use for development)
   ```
 Notes:
@@ -506,7 +483,7 @@ docker run -it --entrypoint /bin/bash video-analytics-serving:0.6.1-dlstreamer-e
 vaserving@82dd59743ca3:~$ ls models
 person_vehicle_bike_detection  vehicle_attributes_recognition  yolo
 vaserving@82dd59743ca3:~$ ls pipelines/object_detection/person_vehicle_bike_detection
-debug_person_vehicle_bike_detection  person_vehicle_bike_detection  yolo
+  person_vehicle_bike_detection  yolo
 ```
 
 ## Run Edge AI Extension with new Model and Pipeline
@@ -515,12 +492,12 @@ debug_person_vehicle_bike_detection  person_vehicle_bike_detection  yolo
 Restart the service to ensure we are using the image with the yolo-v2-tiny-tf model
 ```
 docker stop video-analytics-serving_0.6.1-dlstreamer-edge-ai-extension
-docker/run_server.sh --pipeline-name object_detection --pipeline-version yolo
+docker/run_server.sh
 ```
 ### Run the client
 Note different results due to different model
 ```
-docker/run_client.sh
+docker/run_client.sh --pipeline-name object_detection --pipeline-version yolo
 ```
 ```
 <snip>

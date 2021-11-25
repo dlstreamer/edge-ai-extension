@@ -1,0 +1,69 @@
+{
+    "server_params": {
+        "sleep_period":0.25,
+        "protocol": "http"
+    },
+    "client": [
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version":"person_vehicle_bike_detection"
+                },
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code": 0
+            }
+        },
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version":"object_zone_count"
+                },
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code": 0
+            }
+        },
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version":"object_zone_count_person"
+                },
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code": 0
+            }
+        },
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version":"object_zone_count_vehicle"
+                },
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code": 0
+            }
+        }
+    ],
+    "golden_results":false
+}

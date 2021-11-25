@@ -1,9 +1,5 @@
 {
     "server_params": {
-        "pipeline": {
-            "name": "object_tracking",
-            "version": "person_vehicle_bike_tracking"
-        },
         "max_running_pipelines": 10,
         "sleep_period": 0.25,
         "port": 5001
@@ -11,6 +7,10 @@
     "client": [
         {
             "params": {
+                "pipeline": {
+                    "name": "object_tracking",
+                    "version": "person_vehicle_bike_tracking"
+                },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
                 "output_location": "",
                 "shared_memory": true,
@@ -27,46 +27,6 @@
     "golden_results": true,
     "numerical_tolerance": 0.3,
     "results": [
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
         {
             "inferences": [
                 {
@@ -103,34 +63,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         },
         {
             "inferences": [
@@ -1847,70 +1779,6 @@
                 }
             ],
             "timestamp": "0"
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
-        },
-        {
-            "timestamp": "0",
-            "inferences": []
         }
     ]
 }

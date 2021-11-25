@@ -30,67 +30,21 @@
 import logging
 import queue
 import json
-import jsonschema
 
 from google.protobuf.json_format import MessageToDict
 from media_stream_processor import MediaStreamProcessor
-from common import extension_schema
-from client import Client
 
+from protocol_client import Client
+from arguments import get_extension_config
 
-def validate_extension_config(extension_config):
-    try:
-        validator = jsonschema.Draft4Validator(schema=extension_schema.extension_config,
-                                                format_checker=jsonschema.draft4_format_checker)
-        validator.validate(extension_config)
-    except jsonschema.exceptions.ValidationError as err:
-        raise Exception("Error validating pipeline request: {},: error: {}".format(
-            extension_config, err.message)) from err
-
-def create_extension_config(args):
-    extension_config = {}
-    pipeline_config = {}
-    if args.pipeline_name:
-        pipeline_config["name"] = args.pipeline_name
-    if args.pipeline_version:
-        pipeline_config["version"] = args.pipeline_version
-    if args.pipeline_parameters:
-        try:
-            pipeline_config["parameters"] = json.loads(args.pipeline_parameters)
-        except ValueError as err:
-            raise Exception("Issue loading pipeline parameters: {}".format(args.pipeline_parameters)) from err
-    if args.frame_destination:
-        try:
-            pipeline_config["frame-destination"] = json.loads(args.frame_destination)
-        except ValueError as err:
-            raise Exception("Issue loading frame destination: {}".format(args.frame_destination)) from err
-    if args.pipeline_extensions:
-        try:
-            pipeline_config["pipeline_extensions"] = json.loads(args.pipeline_extensions)
-        except ValueError as err:
-            raise Exception("Issue loading pipeline extensions: {}".format(args.pipeline_extensions)) from err
-
-    if len(pipeline_config) > 0:
-        extension_config.setdefault("pipeline", pipeline_config)
-
-    return extension_config
 
 class GrpcClient(Client):
     def __init__(self, args, width, height, frame_size):
         super().__init__()
         self._frame_queue = queue.Queue(args.frame_queue_size)
 
-        extension_config = {}
-        if args.extension_config:
-            if args.extension_config.endswith(".json"):
-                with open(args.extension_config, "r") as config:
-                    extension_config = json.loads(config.read())
-            else:
-                extension_config = json.loads(args.extension_config)
-        else:
-            extension_config = create_extension_config(args)
+        extension_config = get_extension_config(args)
 
-        validate_extension_config(extension_config)
         logging.info("Extension Configuration: {}".format(extension_config))
 
         self._msp = MediaStreamProcessor(

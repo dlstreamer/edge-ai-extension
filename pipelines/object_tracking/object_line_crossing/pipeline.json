@@ -1,6 +1,6 @@
 {
 	"type": "GStreamer",
-	"template": ["appsrc name=source",
+	"template": ["appsrc name=source ! decodebin ! videoconvert",
 				" ! gvadetect model={models[person_vehicle_bike_detection][1][network]} name=detection",
 				" ! queue ! gvatrack name=tracking",
 				" ! gvaclassify model={models[vehicle_attributes_recognition][1][network]} name=classification",
