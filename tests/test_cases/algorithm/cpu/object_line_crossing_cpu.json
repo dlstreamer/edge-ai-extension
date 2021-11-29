@@ -6,7 +6,7 @@
     "client": {
         "params": {
             "pipeline": {
-                "name": "object_tracking",
+                "name": "spatial_analytics",
                 "version": "object_line_crossing",
                 "parameters": {
                     "detection-device": "CPU",

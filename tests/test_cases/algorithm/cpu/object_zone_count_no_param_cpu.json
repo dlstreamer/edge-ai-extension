@@ -6,7 +6,7 @@
     "client": {
         "params": {
             "pipeline": {
-                "name": "object_detection",
+                "name": "spatial_analytics",
                 "version": "object_zone_count",
                 "parameters": {
                     "detection-device":"CPU"

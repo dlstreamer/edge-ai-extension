@@ -135,10 +135,10 @@ The following pipelines are included in the AI Extension:
 | object_detection | person_vehicle_bike | [definition](pipelines/object_detection/person_vehicle_bike/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
 | object_detection | person  | [definition](pipelines/object_detection/person/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
 | object_detection | vehicle  | [definition](pipelines/object_detection/vehicle/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
-| object_detection | object_zone_count | [definition](pipelines/object_detection/object_zone_count/pipeline.json)|![diagram](pipeline_diagrams/zone-detection.png)|
 | object_classification  | vehicle_attributes  | [definition](pipelines/object_classification/vehicle_attributes/pipeline.json)|![diagram](pipeline_diagrams/object-classification.png)|
 | object_tracking  | person_vehicle_bike  | [definition](pipelines/object_tracking/person_vehicle_bike/pipeline.json)|![diagram](pipeline_diagrams/object-tracking.png)|
-| object_tracking  | object_line_crossing  | [definition](pipelines/object_tracking/object_line_crossing/pipeline.json)|![diagram](pipeline_diagrams/line-crossing.png)|
+| spatial_analytics | object_zone_count | [definition](pipelines/spatial_analytics/object_zone_count/pipeline.json)|![diagram](pipeline_diagrams/zone-detection.png)|
+| spatial_analytics | object_line_crossing  | [definition](pipelines/spatial_analytics/object_line_crossing/pipeline.json)|![diagram](pipeline_diagrams/line-crossing.png)|
 | action_recognition | general  | [definition](pipelines/action_recognition/general/pipeline.json)|![diagram](pipeline_diagrams/action-recognition.png)|
 
 There are three versions of the object zone count pipeline. They are all based on the same pipeline design but use different detection models.
@@ -250,7 +250,7 @@ This mode runs with files from the host, not the container, which is useful for 
 
 # Spatial Analytics Pipelines
 ## Object Zone Count
-The [object_detection/object_zone_count](./pipelines/object_detection/object_zone_count/pipeline.json) pipeline generates events containing objects detected in zones defined by the AVA extension configuration. For more information on the underlying zone event operation, see object_zone_count [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_zone_count.md).
+The [spatial_analytics/object_zone_count](./pipelines/spatial_analytics/object_zone_count/pipeline.json) pipeline generates events containing objects detected in zones defined by the AVA extension configuration. For more information on the underlying zone event operation, see object_zone_count [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_zone_count.md).
 
 ### Build and Run
 
@@ -294,7 +294,7 @@ To get a visual of `object_zone_count` extension, run with `object_zone_count_re
 3. Connect and visualize: Re-stream pipeline using VLC network stream with url `rtsp://localhost:8554/zone-events`.
 
 ## Object Line Crossing
-The [object_tracking/object_line_crossing](./pipelines/object_tracking/object_line_crossing/pipeline.json) pipeline generates events containing objects which crossed lines defined by the AVA extension configuration. For more information on the underlying line crossing operation, see object_line_crossing [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_line_crossing.md).
+The [spatial_analytics/object_line_crossing](./pipelines/spatial_analytics/object_line_crossing/pipeline.json) pipeline generates events containing objects which crossed lines defined by the AVA extension configuration. For more information on the underlying line crossing operation, see object_line_crossing [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_line_crossing.md).
 
 ### Build and Run
 

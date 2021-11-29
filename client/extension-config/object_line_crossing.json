@@ -1,6 +1,6 @@
 {
     "pipeline": {
-        "name": "object_tracking",
+        "name": "spatial_analytics",
         "version": "object_line_crossing",
         "parameters": {
             "object-line-crossing-config": {

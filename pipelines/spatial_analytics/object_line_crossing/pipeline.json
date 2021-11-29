@@ -3,10 +3,9 @@
 	"template": ["appsrc name=source ! decodebin ! videoconvert",
 				" ! gvadetect model={models[object_detection][person_vehicle_bike][network]} name=detection",
 				" ! queue ! gvatrack name=tracking",
-				" ! gvaclassify model={models[object_classification][vehicle_attributes][network]} name=classification",
 				" ! gvapython class=ObjectLineCrossing module=/home/video-analytics-serving/extensions/spatial_analytics/object_line_crossing.py name=object-line-crossing",
 				" ! appsink name=destination"],
-	"description": "Object Tracking pipeline with Line Crossing Tracking module",
+	"description": "Spatial Analytics line crossing events with model trained for person, vehicle and bike detection",
 	"parameters": {
 		"type": "object",
 		"properties": {
