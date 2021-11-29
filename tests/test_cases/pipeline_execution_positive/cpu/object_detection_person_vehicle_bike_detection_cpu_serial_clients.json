@@ -9,7 +9,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"person_vehicle_bike_detection"
+                    "version":"person_vehicle_bike"
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",
                 "output_location":"",

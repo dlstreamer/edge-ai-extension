@@ -9,7 +9,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"person_vehicle_bike_detection",
+                    "version":"person_vehicle_bike",
                     "parameters": {
                         "detection-device":"CPU"
                     }
@@ -30,7 +30,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_classification",
-                    "version":"vehicle_attributes_recognition",
+                    "version":"vehicle_attributes",
                     "parameters": {
                         "detection-device":"CPU"
                     }
@@ -51,7 +51,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_tracking",
-                    "version":"person_vehicle_bike_tracking",
+                    "version":"person_vehicle_bike",
                     "parameters": {
                         "detection-device":"CPU"
                     }

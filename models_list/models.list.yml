@@ -1,10 +1,10 @@
 - model: person-vehicle-bike-detection-crossroad-0078
-  alias: person_vehicle_bike_detection
-  version: 1
+  alias: object_detection
+  version: person_vehicle_bike
   precision: [FP16,FP32]
 - model: vehicle-attributes-recognition-barrier-0039
-  alias: vehicle_attributes_recognition
-  version: 1
+  alias: object_classification
+  version: vehicle_attributes
   precision: [FP16,FP32]
 - model: person-detection-retail-0013
   alias: object_detection
@@ -25,4 +25,3 @@
   alias: action_recognition
   version: encoder
   precision: [FP16,FP32]
-

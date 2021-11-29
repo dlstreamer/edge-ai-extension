@@ -10,7 +10,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_classification",
-                    "version":"vehicle_attributes_recognition",
+                    "version":"vehicle_attributes",
                     "parameters": {
                         "detection-device":"CPU"
                     },

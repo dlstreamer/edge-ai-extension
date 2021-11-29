@@ -8,7 +8,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version": "person_vehicle_bike_detection",
+                    "version": "person_vehicle_bike",
                     "parameters": {
                         "nireq": 6,
                         "threshold": 0.7

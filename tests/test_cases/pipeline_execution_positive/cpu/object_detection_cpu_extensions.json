@@ -9,12 +9,12 @@
             "params": {
                 "pipeline": {
                     "name": "object_detection",
-                    "version": "person_vehicle_bike_detection",
+                    "version": "person_vehicle_bike",
                     "parameters": {
                         "detection-device": "CPU"
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     }
                 },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
@@ -52,7 +52,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -80,7 +80,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -108,7 +108,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -136,7 +136,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -164,7 +164,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -192,7 +192,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -220,7 +220,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -248,7 +248,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -276,7 +276,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -304,7 +304,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -332,7 +332,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -360,7 +360,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -388,7 +388,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -416,7 +416,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -444,7 +444,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -472,7 +472,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -500,7 +500,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -528,7 +528,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -556,7 +556,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -584,7 +584,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -612,7 +612,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -640,7 +640,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -668,7 +668,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -696,7 +696,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -724,7 +724,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -752,7 +752,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -780,7 +780,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -808,7 +808,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -836,7 +836,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -864,7 +864,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -892,7 +892,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -920,7 +920,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -948,7 +948,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -976,7 +976,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1004,7 +1004,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1032,7 +1032,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1060,7 +1060,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1088,7 +1088,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1116,7 +1116,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1144,7 +1144,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1172,7 +1172,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1200,7 +1200,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1228,7 +1228,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1256,7 +1256,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1284,7 +1284,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1312,7 +1312,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1340,7 +1340,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1368,7 +1368,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1396,7 +1396,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1424,7 +1424,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1452,7 +1452,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1480,7 +1480,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1508,7 +1508,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",
@@ -1536,7 +1536,7 @@
                         "id": ""
                     },
                     "extensions": {
-                        "video-name": "person_vehicle_bike_detection"
+                        "video-name": "person_vehicle_bike"
                     },
                     "subtype": "",
                     "inferenceId": "",

@@ -173,7 +173,7 @@ def parse_args(args=None, program_name="DL Streamer Edge AI Extension Client"):
         action="store",
         help="version of the pipeline to run",
         type=str,
-        default="person_vehicle_bike_detection",
+        default="person_vehicle_bike",
     )
 
     parser.add_argument(

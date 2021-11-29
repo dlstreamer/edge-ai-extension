@@ -8,7 +8,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"person_vehicle_bike_detection"
+                    "version":"person_vehicle_bike"
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",
                 "output_location": "",
@@ -38,7 +38,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"object_zone_count_person"
+                    "version":"person"
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",
                 "output_location": "",
@@ -53,7 +53,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"object_zone_count_vehicle"
+                    "version":"vehicle"
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",
                 "output_location": "",

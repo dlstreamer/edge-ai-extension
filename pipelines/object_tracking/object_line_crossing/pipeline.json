@@ -1,9 +1,9 @@
 {
 	"type": "GStreamer",
 	"template": ["appsrc name=source ! decodebin ! videoconvert",
-				" ! gvadetect model={models[person_vehicle_bike_detection][1][network]} name=detection",
+				" ! gvadetect model={models[object_detection][person_vehicle_bike][network]} name=detection",
 				" ! queue ! gvatrack name=tracking",
-				" ! gvaclassify model={models[vehicle_attributes_recognition][1][network]} name=classification",
+				" ! gvaclassify model={models[object_classification][vehicle_attributes][network]} name=classification",
 				" ! gvapython class=ObjectLineCrossing module=/home/video-analytics-serving/extensions/spatial_analytics/object_line_crossing.py name=object-line-crossing",
 				" ! appsink name=destination"],
 	"description": "Object Tracking pipeline with Line Crossing Tracking module",

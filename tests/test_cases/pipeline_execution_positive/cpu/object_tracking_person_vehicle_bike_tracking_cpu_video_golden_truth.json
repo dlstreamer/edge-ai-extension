@@ -9,7 +9,7 @@
             "params": {
                 "pipeline": {
                     "name": "object_tracking",
-                    "version": "person_vehicle_bike_tracking"
+                    "version": "person_vehicle_bike"
                 },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
                 "output_location": "",

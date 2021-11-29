@@ -10,7 +10,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_tracking",
-                    "version":"person_vehicle_bike_tracking",
+                    "version":"person_vehicle_bike",
                     "parameters": {
                         "detection-device":"CPU"
                     },

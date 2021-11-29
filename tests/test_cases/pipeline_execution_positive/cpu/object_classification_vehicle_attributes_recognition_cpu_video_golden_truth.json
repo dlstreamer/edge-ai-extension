@@ -9,7 +9,7 @@
             "params": {
                 "pipeline": {
                     "name": "object_classification",
-                    "version": "vehicle_attributes_recognition"
+                    "version": "vehicle_attributes"
                 },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
                 "output_location": "",
@@ -18,7 +18,6 @@
                 "sleep_period": 0.25,
                 "port": 5001,
                 "timeout": 300,
-                "max_frames": 100,
                 "expected_return_code": 0
             },
             "num_of_concurrent_clients": 1
@@ -34,25 +33,25 @@
                     "entity": {
                         "tag": {
                             "value": "vehicle",
-                            "confidence": 0.5331829
+                            "confidence": 0.53589624
                         },
                         "attributes": [
                             {
                                 "name": "color",
-                                "value": "black",
-                                "confidence": 0.5331829
+                                "value": "white",
+                                "confidence": 0.53589624
                             },
                             {
                                 "name": "type",
                                 "value": "bus",
-                                "confidence": 0.5331829
+                                "confidence": 0.53589624
                             }
                         ],
                         "box": {
-                            "l": 0.024282753,
-                            "t": 0.020605862,
-                            "w": 0.9220138,
-                            "h": 0.95935416
+                            "l": 0.12772469,
+                            "t": 0.87453204,
+                            "w": 0.21365745,
+                            "h": 0.12546796
                         },
                         "id": ""
                     },
@@ -70,16 +69,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.5711396
+                            "value": "vehicle",
+                            "confidence": 0.8853462
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.8853462
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.8853462
+                            }
+                        ],
                         "box": {
-                            "l": 0.6738397,
-                            "t": 0.8774517,
-                            "w": 0.07104528,
-                            "h": 0.12180245
+                            "l": 0.119614035,
+                            "t": 0.84645396,
+                            "w": 0.22143403,
+                            "h": 0.15354604
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -96,16 +106,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.545616
+                            "value": "vehicle",
+                            "confidence": 0.84577364
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.84577364
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.84577364
+                            }
+                        ],
                         "box": {
-                            "l": 0.67698646,
-                            "t": 0.8276149,
-                            "w": 0.06717813,
-                            "h": 0.1723851
+                            "l": 0.115861714,
+                            "t": 0.8144542,
+                            "w": 0.23512805,
+                            "h": 0.1855458
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -122,16 +143,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.6319265
+                            "value": "vehicle",
+                            "confidence": 0.810611
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.810611
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.810611
+                            }
+                        ],
                         "box": {
-                            "l": 0.68209946,
-                            "t": 0.8108507,
-                            "w": 0.06424129,
-                            "h": 0.18914932
+                            "l": 0.11191909,
+                            "t": 0.78468996,
+                            "w": 0.24267496,
+                            "h": 0.20554674
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -148,16 +180,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9066075
+                            "value": "vehicle",
+                            "confidence": 0.9545369
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9545369
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9545369
+                            }
+                        ],
                         "box": {
-                            "l": 0.68385965,
-                            "t": 0.7884355,
-                            "w": 0.06378853,
-                            "h": 0.21156448
+                            "l": 0.11691643,
+                            "t": 0.7634727,
+                            "w": 0.23801254,
+                            "h": 0.23652732
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -174,16 +217,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.912569
+                            "value": "vehicle",
+                            "confidence": 0.92879736
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.92879736
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.92879736
+                            }
+                        ],
                         "box": {
-                            "l": 0.6836957,
-                            "t": 0.7698633,
-                            "w": 0.06689739,
-                            "h": 0.22757244
+                            "l": 0.11455746,
+                            "t": 0.7424754,
+                            "w": 0.24333374,
+                            "h": 0.2575246
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -200,16 +254,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9070363
+                            "value": "vehicle",
+                            "confidence": 0.956787
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.956787
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.956787
+                            }
+                        ],
                         "box": {
-                            "l": 0.6820531,
-                            "t": 0.75542647,
-                            "w": 0.07277942,
-                            "h": 0.23570335
+                            "l": 0.11096674,
+                            "t": 0.7132834,
+                            "w": 0.25303704,
+                            "h": 0.28671658
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -226,16 +291,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9320721
+                            "value": "vehicle",
+                            "confidence": 0.97005063
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.97005063
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.97005063
+                            }
+                        ],
                         "box": {
-                            "l": 0.68271106,
-                            "t": 0.7462635,
-                            "w": 0.07464826,
-                            "h": 0.24191117
+                            "l": 0.11796343,
+                            "t": 0.6874621,
+                            "w": 0.24865568,
+                            "h": 0.3125379
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -252,16 +328,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.94775724
+                            "value": "vehicle",
+                            "confidence": 0.9876368
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9876368
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9876368
+                            }
+                        ],
                         "box": {
-                            "l": 0.6866563,
-                            "t": 0.72404575,
-                            "w": 0.071341634,
-                            "h": 0.24938452
+                            "l": 0.118270844,
+                            "t": 0.6614278,
+                            "w": 0.25312048,
+                            "h": 0.3385722
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -278,16 +365,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8901958
+                            "value": "vehicle",
+                            "confidence": 0.9953695
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9953695
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9953695
+                            }
+                        ],
                         "box": {
-                            "l": 0.69172645,
-                            "t": 0.7122816,
-                            "w": 0.06600654,
-                            "h": 0.23630273
+                            "l": 0.11130661,
+                            "t": 0.6450088,
+                            "w": 0.2608517,
+                            "h": 0.3549912
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -304,16 +402,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8794432
+                            "value": "vehicle",
+                            "confidence": 0.99539006
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99539006
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99539006
+                            }
+                        ],
                         "box": {
-                            "l": 0.69487077,
-                            "t": 0.702668,
-                            "w": 0.061315656,
-                            "h": 0.19413567
+                            "l": 0.114135906,
+                            "t": 0.6167531,
+                            "w": 0.25819534,
+                            "h": 0.3832469
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -330,16 +439,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.89006025
+                            "value": "vehicle",
+                            "confidence": 0.995665
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.995665
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.995665
+                            }
+                        ],
                         "box": {
-                            "l": 0.69831055,
-                            "t": 0.68947685,
-                            "w": 0.059005857,
-                            "h": 0.18460464
+                            "l": 0.11645955,
+                            "t": 0.5916192,
+                            "w": 0.25389278,
+                            "h": 0.4083808
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -356,16 +476,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.73576564
+                            "value": "vehicle",
+                            "confidence": 0.99081564
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99081564
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99081564
+                            }
+                        ],
                         "box": {
-                            "l": 0.69752985,
-                            "t": 0.66788965,
-                            "w": 0.063902855,
-                            "h": 0.23336577
+                            "l": 0.11661327,
+                            "t": 0.57610655,
+                            "w": 0.25338516,
+                            "h": 0.42310476
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -382,16 +513,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7191345
+                            "value": "vehicle",
+                            "confidence": 0.9863457
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9863457
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9863457
+                            }
+                        ],
                         "box": {
-                            "l": 0.695701,
-                            "t": 0.6512481,
-                            "w": 0.06841791,
-                            "h": 0.24584174
+                            "l": 0.11988914,
+                            "t": 0.5550669,
+                            "w": 0.24948639,
+                            "h": 0.44493312
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -408,16 +550,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.64864504
+                            "value": "vehicle",
+                            "confidence": 0.9907404
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9907404
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9907404
+                            }
+                        ],
                         "box": {
-                            "l": 0.7031947,
-                            "t": 0.64848554,
-                            "w": 0.060946345,
-                            "h": 0.20299816
+                            "l": 0.13193643,
+                            "t": 0.5338525,
+                            "w": 0.23425502,
+                            "h": 0.46614748
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -434,16 +587,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.92821795
+                            "value": "vehicle",
+                            "confidence": 0.9895864
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9895864
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9895864
+                            }
+                        ],
                         "box": {
-                            "l": 0.7067162,
-                            "t": 0.6291436,
-                            "w": 0.06012237,
-                            "h": 0.19993663
+                            "l": 0.13842326,
+                            "t": 0.51982456,
+                            "w": 0.22412807,
+                            "h": 0.48017544
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -460,16 +624,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.67257637
+                            "value": "vehicle",
+                            "confidence": 0.9902507
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9902507
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9902507
+                            }
+                        ],
                         "box": {
-                            "l": 0.70955545,
-                            "t": 0.6180525,
-                            "w": 0.06285143,
-                            "h": 0.20727313
+                            "l": 0.14148718,
+                            "t": 0.49905986,
+                            "w": 0.2168644,
+                            "h": 0.50094014
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -486,16 +661,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7639951
+                            "value": "vehicle",
+                            "confidence": 0.995391
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.995391
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.995391
+                            }
+                        ],
                         "box": {
-                            "l": 0.709064,
-                            "t": 0.6107304,
-                            "w": 0.06481433,
-                            "h": 0.21084714
+                            "l": 0.14771158,
+                            "t": 0.4848788,
+                            "w": 0.2098118,
+                            "h": 0.5151212
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -512,16 +698,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.55016905
+                            "value": "vehicle",
+                            "confidence": 0.9964468
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9964468
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9964468
+                            }
+                        ],
                         "box": {
-                            "l": 0.71846753,
-                            "t": 0.5747916,
-                            "w": 0.059869647,
-                            "h": 0.21045041
+                            "l": 0.14829776,
+                            "t": 0.46107405,
+                            "w": 0.20410252,
+                            "h": 0.52687
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -538,16 +735,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.65665424
+                            "value": "vehicle",
+                            "confidence": 0.9984347
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9984347
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9984347
+                            }
+                        ],
                         "box": {
-                            "l": 0.725803,
-                            "t": 0.5519361,
-                            "w": 0.057510734,
-                            "h": 0.20893276
+                            "l": 0.15584773,
+                            "t": 0.4610809,
+                            "w": 0.1950686,
+                            "h": 0.48175073
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -564,16 +772,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9733873
+                            "value": "vehicle",
+                            "confidence": 0.99837947
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99837947
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99837947
+                            }
+                        ],
                         "box": {
-                            "l": 0.73264873,
-                            "t": 0.5479822,
-                            "w": 0.057091117,
-                            "h": 0.17773366
+                            "l": 0.15980141,
+                            "t": 0.4297232,
+                            "w": 0.1849434,
+                            "h": 0.50290465
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -590,16 +809,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.84963804
+                            "value": "vehicle",
+                            "confidence": 0.9985349
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9985349
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9985349
+                            }
+                        ],
                         "box": {
-                            "l": 0.7380912,
-                            "t": 0.5399902,
-                            "w": 0.05107963,
-                            "h": 0.1634059
+                            "l": 0.16266699,
+                            "t": 0.4155746,
+                            "w": 0.17637847,
+                            "h": 0.48982584
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -616,16 +846,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7785518
+                            "value": "vehicle",
+                            "confidence": 0.9976847
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9976847
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9976847
+                            }
+                        ],
                         "box": {
-                            "l": 0.74251115,
-                            "t": 0.51875055,
-                            "w": 0.051761627,
-                            "h": 0.17246556
+                            "l": 0.16182691,
+                            "t": 0.42558706,
+                            "w": 0.1787622,
+                            "h": 0.45470667
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -642,16 +883,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8624761
+                            "value": "vehicle",
+                            "confidence": 0.99754
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99754
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.99754
+                            }
+                        ],
                         "box": {
-                            "l": 0.74646693,
-                            "t": 0.52262634,
-                            "w": 0.05401206,
-                            "h": 0.1653806
+                            "l": 0.16020398,
+                            "t": 0.39572844,
+                            "w": 0.17822452,
+                            "h": 0.46082154
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -668,16 +920,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9094689
+                            "value": "vehicle",
+                            "confidence": 0.9950094
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9950094
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.9950094
+                            }
+                        ],
                         "box": {
-                            "l": 0.74606466,
-                            "t": 0.501783,
-                            "w": 0.063486814,
-                            "h": 0.20076704
+                            "l": 0.15470229,
+                            "t": 0.38987315,
+                            "w": 0.1825511,
+                            "h": 0.44481528
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -694,16 +957,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8755384
+                            "value": "vehicle",
+                            "confidence": 0.98555064
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.98555064
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.98555064
+                            }
+                        ],
                         "box": {
-                            "l": 0.7558926,
-                            "t": 0.4958914,
-                            "w": 0.057802796,
-                            "h": 0.18775523
+                            "l": 0.15112022,
+                            "t": 0.3617109,
+                            "w": 0.1791428,
+                            "h": 0.45430875
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -720,16 +994,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7840041
+                            "value": "vehicle",
+                            "confidence": 0.99117893
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99117893
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.99117893
+                            }
+                        ],
                         "box": {
-                            "l": 0.7639789,
-                            "t": 0.48796904,
-                            "w": 0.058839917,
-                            "h": 0.19846535
+                            "l": 0.13897088,
+                            "t": 0.35489595,
+                            "w": 0.1909368,
+                            "h": 0.4410236
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -746,16 +1031,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.69172084
+                            "value": "vehicle",
+                            "confidence": 0.9849664
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9849664
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.9849664
+                            }
+                        ],
                         "box": {
-                            "l": 0.76103276,
-                            "t": 0.47533986,
-                            "w": 0.06264353,
-                            "h": 0.21859345
+                            "l": 0.1386024,
+                            "t": 0.3299864,
+                            "w": 0.19299278,
+                            "h": 0.43929684
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -772,16 +1068,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.59408885
+                            "value": "vehicle",
+                            "confidence": 0.99433136
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99433136
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.99433136
+                            }
+                        ],
                         "box": {
-                            "l": 0.76048905,
-                            "t": 0.46558142,
-                            "w": 0.07074797,
-                            "h": 0.22883952
+                            "l": 0.12715474,
+                            "t": 0.32158446,
+                            "w": 0.20004529,
+                            "h": 0.43555725
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -798,16 +1105,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9653229
+                            "value": "vehicle",
+                            "confidence": 0.995909
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.995909
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.995909
+                            }
+                        ],
                         "box": {
-                            "l": 0.7937204,
-                            "t": 0.43897793,
-                            "w": 0.04907632,
-                            "h": 0.2026625
+                            "l": 0.11801631,
+                            "t": 0.30922285,
+                            "w": 0.2041859,
+                            "h": 0.42854258
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -824,16 +1142,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8784913
+                            "value": "vehicle",
+                            "confidence": 0.996716
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.996716
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.996716
+                            }
+                        ],
                         "box": {
-                            "l": 0.79696697,
-                            "t": 0.44334424,
-                            "w": 0.052559853,
-                            "h": 0.17237246
+                            "l": 0.10883602,
+                            "t": 0.29953146,
+                            "w": 0.20985627,
+                            "h": 0.41978192
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -850,16 +1179,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9141757
+                            "value": "vehicle",
+                            "confidence": 0.9969676
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9969676
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9969676
+                            }
+                        ],
                         "box": {
-                            "l": 0.8037351,
-                            "t": 0.42122135,
-                            "w": 0.050801516,
-                            "h": 0.17859343
+                            "l": 0.09976837,
+                            "t": 0.2932428,
+                            "w": 0.2174069,
+                            "h": 0.41021883
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -876,16 +1216,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.8196478
+                            "value": "vehicle",
+                            "confidence": 0.9974057
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9974057
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9974057
+                            }
+                        ],
                         "box": {
-                            "l": 0.8070199,
-                            "t": 0.42729446,
-                            "w": 0.05325067,
-                            "h": 0.16498926
+                            "l": 0.0962921,
+                            "t": 0.28718907,
+                            "w": 0.21441358,
+                            "h": 0.3987621
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -902,16 +1253,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7993756
+                            "value": "vehicle",
+                            "confidence": 0.99843174
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99843174
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99843174
+                            }
+                        ],
                         "box": {
-                            "l": 0.8123768,
-                            "t": 0.42174712,
-                            "w": 0.05395162,
-                            "h": 0.17231616
+                            "l": 0.08524898,
+                            "t": 0.2805257,
+                            "w": 0.21930712,
+                            "h": 0.39043745
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -928,16 +1290,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9589349
+                            "value": "vehicle",
+                            "confidence": 0.9982364
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9982364
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9982364
+                            }
+                        ],
                         "box": {
-                            "l": 0.8181573,
-                            "t": 0.41373995,
-                            "w": 0.05602038,
-                            "h": 0.1766626
+                            "l": 0.07165009,
+                            "t": 0.27524585,
+                            "w": 0.22636914,
+                            "h": 0.38421452
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -954,16 +1327,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.823366
+                            "value": "vehicle",
+                            "confidence": 0.9990038
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9990038
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9990038
+                            }
+                        ],
                         "box": {
-                            "l": 0.8266267,
-                            "t": 0.4037907,
-                            "w": 0.05867207,
-                            "h": 0.18108618
+                            "l": 0.06478336,
+                            "t": 0.26906952,
+                            "w": 0.2241722,
+                            "h": 0.37783518
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -980,16 +1364,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7603218
+                            "value": "vehicle",
+                            "confidence": 0.99924964
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99924964
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99924964
+                            }
+                        ],
                         "box": {
-                            "l": 0.8351024,
-                            "t": 0.38796455,
-                            "w": 0.055439115,
-                            "h": 0.20141989
+                            "l": 0.0539544,
+                            "t": 0.26454514,
+                            "w": 0.23149014,
+                            "h": 0.36887556
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1006,16 +1401,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.6029193
+                            "value": "vehicle",
+                            "confidence": 0.9992986
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9992986
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9992986
+                            }
+                        ],
                         "box": {
-                            "l": 0.835894,
-                            "t": 0.3953045,
-                            "w": 0.06410432,
-                            "h": 0.19586319
+                            "l": 0.041390173,
+                            "t": 0.25851178,
+                            "w": 0.2374028,
+                            "h": 0.36181682
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1032,16 +1438,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.6431664
+                            "value": "vehicle",
+                            "confidence": 0.999778
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.999778
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.999778
+                            }
+                        ],
                         "box": {
-                            "l": 0.8533089,
-                            "t": 0.37650836,
-                            "w": 0.05566156,
-                            "h": 0.18334556
+                            "l": 0.029133245,
+                            "t": 0.25703144,
+                            "w": 0.23902054,
+                            "h": 0.35184795
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1058,16 +1475,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.86407906
+                            "value": "vehicle",
+                            "confidence": 0.9993957
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9993957
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9993957
+                            }
+                        ],
                         "box": {
-                            "l": 0.8669489,
-                            "t": 0.3682298,
-                            "w": 0.04517567,
-                            "h": 0.17539549
+                            "l": 0.021095946,
+                            "t": 0.25208777,
+                            "w": 0.23963915,
+                            "h": 0.34932464
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1084,16 +1512,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9767709
+                            "value": "vehicle",
+                            "confidence": 0.99915993
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99915993
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99915993
+                            }
+                        ],
                         "box": {
-                            "l": 0.871626,
-                            "t": 0.3519203,
-                            "w": 0.048897505,
-                            "h": 0.17755216
+                            "l": 0.010921732,
+                            "t": 0.25012583,
+                            "w": 0.24205135,
+                            "h": 0.3427009
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1110,16 +1549,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9095786
+                            "value": "vehicle",
+                            "confidence": 0.9987452
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9987452
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9987452
+                            }
+                        ],
                         "box": {
-                            "l": 0.8777725,
-                            "t": 0.35081258,
-                            "w": 0.04462993,
-                            "h": 0.17136684
+                            "l": 0.001293458,
+                            "t": 0.24886802,
+                            "w": 0.24722356,
+                            "h": 0.3347517
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1136,16 +1586,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.72346437
+                            "value": "vehicle",
+                            "confidence": 0.9984883
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9984883
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9984883
+                            }
+                        ],
                         "box": {
-                            "l": 0.8724969,
-                            "t": 0.34507343,
-                            "w": 0.055560112,
-                            "h": 0.17433015
+                            "l": 0.0018332228,
+                            "t": 0.24661441,
+                            "w": 0.23905924,
+                            "h": 0.32890832
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1162,16 +1623,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.94341516
+                            "value": "vehicle",
+                            "confidence": 0.99734676
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99734676
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99734676
+                            }
+                        ],
                         "box": {
-                            "l": 0.885443,
-                            "t": 0.3428616,
-                            "w": 0.051983595,
-                            "h": 0.16819102
+                            "l": 0.0010432303,
+                            "t": 0.2442691,
+                            "w": 0.22924668,
+                            "h": 0.32601717
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1188,16 +1660,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.91925263
+                            "value": "vehicle",
+                            "confidence": 0.997405
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.997405
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.997405
+                            }
+                        ],
                         "box": {
-                            "l": 0.890168,
-                            "t": 0.33737522,
-                            "w": 0.05444634,
-                            "h": 0.1660024
+                            "l": 0.0014356971,
+                            "t": 0.2479185,
+                            "w": 0.21756545,
+                            "h": 0.31326085
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1214,16 +1697,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.82621837
+                            "value": "vehicle",
+                            "confidence": 0.9971643
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9971643
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9971643
+                            }
+                        ],
                         "box": {
-                            "l": 0.8983594,
-                            "t": 0.3248308,
-                            "w": 0.05595708,
-                            "h": 0.1850271
+                            "t": 0.24323559,
+                            "w": 0.20870174,
+                            "h": 0.31099242,
+                            "l": 0.0
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1240,16 +1734,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.7234381
+                            "value": "vehicle",
+                            "confidence": 0.9948354
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9948354
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9948354
+                            }
+                        ],
                         "box": {
-                            "l": 0.90623915,
-                            "t": 0.3265847,
-                            "w": 0.055173397,
-                            "h": 0.19344509
+                            "t": 0.24232271,
+                            "w": 0.19765985,
+                            "h": 0.30604693,
+                            "l": 0.0
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1266,16 +1771,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.78637254
+                            "value": "vehicle",
+                            "confidence": 0.9803454
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9803454
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9803454
+                            }
+                        ],
                         "box": {
-                            "l": 0.91430944,
-                            "t": 0.31812653,
-                            "w": 0.059316278,
-                            "h": 0.17387837
+                            "l": 0.00028191507,
+                            "t": 0.24119063,
+                            "w": 0.18818915,
+                            "h": 0.30220473
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1292,16 +1808,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.78121597
+                            "value": "vehicle",
+                            "confidence": 0.9421478
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9421478
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9421478
+                            }
+                        ],
                         "box": {
-                            "l": 0.9257197,
-                            "t": 0.30443802,
-                            "w": 0.049933076,
-                            "h": 0.17974228
+                            "l": 0.00039589405,
+                            "t": 0.239665,
+                            "w": 0.18166685,
+                            "h": 0.3004512
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1318,16 +1845,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.82658714
+                            "value": "vehicle",
+                            "confidence": 0.87600344
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.87600344
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.87600344
+                            }
+                        ],
                         "box": {
-                            "l": 0.9289538,
-                            "t": 0.29438913,
-                            "w": 0.0526644,
-                            "h": 0.1843735
+                            "l": 0.0012624413,
+                            "t": 0.24663714,
+                            "w": 0.16646948,
+                            "h": 0.28840157
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1344,16 +1882,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.9711773
+                            "value": "vehicle",
+                            "confidence": 0.5663081
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.5663081
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.5663081
+                            }
+                        ],
                         "box": {
-                            "l": 0.93278146,
-                            "t": 0.29100326,
-                            "w": 0.04981494,
-                            "h": 0.17109424
+                            "l": 0.0006708652,
+                            "t": 0.23616074,
+                            "w": 0.1572426,
+                            "h": 0.2946635
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1370,16 +1919,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.63230634
+                            "value": "vehicle",
+                            "confidence": 0.6406788
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.6406788
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.6406788
+                            }
+                        ],
                         "box": {
-                            "l": 0.932222,
-                            "t": 0.28907815,
-                            "w": 0.053396463,
-                            "h": 0.17203617
+                            "l": 0.0015110373,
+                            "t": 0.23754613,
+                            "w": 0.1490305,
+                            "h": 0.29204935
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1396,16 +1956,27 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.53272724
+                            "value": "vehicle",
+                            "confidence": 0.6001935
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.6001935
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.6001935
+                            }
+                        ],
                         "box": {
-                            "l": 0.9291772,
-                            "t": 0.2618411,
-                            "w": 0.06827295,
-                            "h": 0.20877105
+                            "t": 0.23360002,
+                            "w": 0.13433382,
+                            "h": 0.2928055,
+                            "l": 0.0
                         },
-                        "attributes": [],
                         "id": ""
                     },
                     "subtype": "",
@@ -1422,16 +1993,2708 @@
                     "type": "ENTITY",
                     "entity": {
                         "tag": {
-                            "value": "person",
-                            "confidence": 0.51901996
+                            "value": "vehicle",
+                            "confidence": 0.56450623
                         },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.56450623
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.56450623
+                            }
+                        ],
                         "box": {
-                            "l": 0.9487926,
-                            "t": 0.26644194,
-                            "w": 0.04793358,
-                            "h": 0.18108535
+                            "l": 0.0013338663,
+                            "t": 0.24561226,
+                            "w": 0.11590183,
+                            "h": 0.28104973
                         },
-                        "attributes": [],
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.6236061
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.6236061
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.6236061
+                            }
+                        ],
+                        "box": {
+                            "l": 0.00093346834,
+                            "t": 0.23988576,
+                            "w": 0.10505335,
+                            "h": 0.28594404
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.6083083
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.6083083
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.6083083
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0005336851,
+                            "t": 0.23707005,
+                            "w": 0.09328328,
+                            "h": 0.28569093
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.56303984
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.56303984
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.56303984
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0020972528,
+                            "t": 0.24985503,
+                            "w": 0.08141282,
+                            "h": 0.27135342
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.6473853
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.6473853
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.6473853
+                            }
+                        ],
+                        "box": {
+                            "l": 0.9008814,
+                            "t": 0.13010919,
+                            "w": 0.09591293,
+                            "h": 0.11923435
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.87623835
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.87623835
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.87623835
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10857387,
+                            "t": 0.9076798,
+                            "w": 0.17564403,
+                            "h": 0.088249564
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.97177124
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.97177124
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.97177124
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10527871,
+                            "t": 0.88432187,
+                            "w": 0.18925738,
+                            "h": 0.11567813
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.96653694
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.96653694
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.96653694
+                            }
+                        ],
+                        "box": {
+                            "l": 0.09483328,
+                            "t": 0.85691667,
+                            "w": 0.20767912,
+                            "h": 0.14308333
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.94071364
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.94071364
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.94071364
+                            }
+                        ],
+                        "box": {
+                            "l": 0.08574296,
+                            "t": 0.82832927,
+                            "w": 0.22190231,
+                            "h": 0.1699332
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9909928
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9909928
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9909928
+                            }
+                        ],
+                        "box": {
+                            "l": 0.08400406,
+                            "t": 0.80132186,
+                            "w": 0.22988622,
+                            "h": 0.19377339
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9972404
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9972404
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9972404
+                            }
+                        ],
+                        "box": {
+                            "l": 0.086133726,
+                            "t": 0.7832296,
+                            "w": 0.22916001,
+                            "h": 0.21488583
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9962793
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9962793
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9962793
+                            }
+                        ],
+                        "box": {
+                            "l": 0.08902301,
+                            "t": 0.75486976,
+                            "w": 0.2376052,
+                            "h": 0.24063027
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9928697
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9928697
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9928697
+                            }
+                        ],
+                        "box": {
+                            "l": 0.09140055,
+                            "t": 0.72770137,
+                            "w": 0.23836286,
+                            "h": 0.26817012
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9918899
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9918899
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9918899
+                            }
+                        ],
+                        "box": {
+                            "l": 0.092115134,
+                            "t": 0.7027621,
+                            "w": 0.24179089,
+                            "h": 0.29572916
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9912669
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9912669
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9912669
+                            }
+                        ],
+                        "box": {
+                            "l": 0.09813289,
+                            "t": 0.68740046,
+                            "w": 0.23674752,
+                            "h": 0.30658484
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9915937
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9915937
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9915937
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10107992,
+                            "t": 0.6630127,
+                            "w": 0.23775324,
+                            "h": 0.33698732
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9944629
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9944629
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9944629
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10689509,
+                            "t": 0.6478176,
+                            "w": 0.23786464,
+                            "h": 0.35034394
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9949576
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9949576
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9949576
+                            }
+                        ],
+                        "box": {
+                            "l": 0.09930154,
+                            "t": 0.61979187,
+                            "w": 0.24802595,
+                            "h": 0.38020813
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99530786
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99530786
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99530786
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10342899,
+                            "t": 0.59739536,
+                            "w": 0.25030872,
+                            "h": 0.39909828
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99598014
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99598014
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99598014
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10379888,
+                            "t": 0.58472127,
+                            "w": 0.2543128,
+                            "h": 0.41527873
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9974718
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9974718
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9974718
+                            }
+                        ],
+                        "box": {
+                            "l": 0.11163567,
+                            "t": 0.5607891,
+                            "w": 0.24579503,
+                            "h": 0.4392109
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99892575
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99892575
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99892575
+                            }
+                        ],
+                        "box": {
+                            "l": 0.11259923,
+                            "t": 0.5398147,
+                            "w": 0.24551028,
+                            "h": 0.4601853
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9976089
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9976089
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9976089
+                            }
+                        ],
+                        "box": {
+                            "l": 0.11465279,
+                            "t": 0.5248196,
+                            "w": 0.24517208,
+                            "h": 0.4751804
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9977431
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9977431
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9977431
+                            }
+                        ],
+                        "box": {
+                            "l": 0.12573937,
+                            "t": 0.5048592,
+                            "w": 0.24172291,
+                            "h": 0.49498045
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99885964
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99885964
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99885964
+                            }
+                        ],
+                        "box": {
+                            "l": 0.13081256,
+                            "t": 0.4873171,
+                            "w": 0.23297396,
+                            "h": 0.51137066
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.999326
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.999326
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.999326
+                            }
+                        ],
+                        "box": {
+                            "l": 0.13679,
+                            "t": 0.4727683,
+                            "w": 0.22590372,
+                            "h": 0.52514935
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99979156
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99979156
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99979156
+                            }
+                        ],
+                        "box": {
+                            "l": 0.1440592,
+                            "t": 0.45713776,
+                            "w": 0.22342633,
+                            "h": 0.5298649
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99970263
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99970263
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99970263
+                            }
+                        ],
+                        "box": {
+                            "l": 0.151023,
+                            "t": 0.4349372,
+                            "w": 0.21742952,
+                            "h": 0.5253017
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99978095
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99978095
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.99978095
+                            }
+                        ],
+                        "box": {
+                            "l": 0.15597388,
+                            "t": 0.41676214,
+                            "w": 0.21595603,
+                            "h": 0.51086056
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99975556
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99975556
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.99975556
+                            }
+                        ],
+                        "box": {
+                            "l": 0.16254348,
+                            "t": 0.40373784,
+                            "w": 0.2091521,
+                            "h": 0.49352157
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9997074
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9997074
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9997074
+                            }
+                        ],
+                        "box": {
+                            "l": 0.16708346,
+                            "t": 0.3847566,
+                            "w": 0.20550512,
+                            "h": 0.48661825
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9997024
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9997024
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9997024
+                            }
+                        ],
+                        "box": {
+                            "l": 0.17622535,
+                            "t": 0.363634,
+                            "w": 0.19417544,
+                            "h": 0.48319077
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99970573
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99970573
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99970573
+                            }
+                        ],
+                        "box": {
+                            "l": 0.18110415,
+                            "t": 0.35130164,
+                            "w": 0.18772298,
+                            "h": 0.46517769
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9995609
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9995609
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9995609
+                            }
+                        ],
+                        "box": {
+                            "l": 0.18558624,
+                            "t": 0.33145145,
+                            "w": 0.18121105,
+                            "h": 0.46101078
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99929357
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99929357
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.99929357
+                            }
+                        ],
+                        "box": {
+                            "l": 0.18691355,
+                            "t": 0.32064855,
+                            "w": 0.1771465,
+                            "h": 0.43771243
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9990963
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9990963
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9990963
+                            }
+                        ],
+                        "box": {
+                            "l": 0.1920003,
+                            "t": 0.30385184,
+                            "w": 0.17108887,
+                            "h": 0.42932117
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9986255
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9986255
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9986255
+                            }
+                        ],
+                        "box": {
+                            "l": 0.19413929,
+                            "t": 0.28661126,
+                            "w": 0.16439702,
+                            "h": 0.42101967
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9986834
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9986834
+                            },
+                            {
+                                "name": "type",
+                                "value": "bus",
+                                "confidence": 0.9986834
+                            }
+                        ],
+                        "box": {
+                            "l": 0.19189085,
+                            "t": 0.26891118,
+                            "w": 0.16427533,
+                            "h": 0.40436226
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99854505
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99854505
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.99854505
+                            }
+                        ],
+                        "box": {
+                            "l": 0.19153665,
+                            "t": 0.2542758,
+                            "w": 0.15884717,
+                            "h": 0.39911628
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99836975
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99836975
+                            },
+                            {
+                                "name": "type",
+                                "value": "truck",
+                                "confidence": 0.99836975
+                            }
+                        ],
+                        "box": {
+                            "l": 0.19084431,
+                            "t": 0.24105118,
+                            "w": 0.15634094,
+                            "h": 0.3860793
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.998346
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.998346
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.998346
+                            }
+                        ],
+                        "box": {
+                            "l": 0.18528184,
+                            "t": 0.2262789,
+                            "w": 0.15621537,
+                            "h": 0.37520707
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9985353
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9985353
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9985353
+                            }
+                        ],
+                        "box": {
+                            "l": 0.18251789,
+                            "t": 0.20731896,
+                            "w": 0.15853548,
+                            "h": 0.3913902
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99890685
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99890685
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99890685
+                            }
+                        ],
+                        "box": {
+                            "l": 0.1711502,
+                            "t": 0.19265814,
+                            "w": 0.16871591,
+                            "h": 0.38452494
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99559766
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99559766
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99559766
+                            }
+                        ],
+                        "box": {
+                            "l": 0.1617633,
+                            "t": 0.19152716,
+                            "w": 0.17350365,
+                            "h": 0.37282655
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9984028
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.9984028
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9984028
+                            }
+                        ],
+                        "box": {
+                            "l": 0.15506619,
+                            "t": 0.17903468,
+                            "w": 0.17588007,
+                            "h": 0.36372045
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.999236
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.999236
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.999236
+                            }
+                        ],
+                        "box": {
+                            "l": 0.14886817,
+                            "t": 0.16582935,
+                            "w": 0.17825848,
+                            "h": 0.3523522
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9994203
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9994203
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9994203
+                            }
+                        ],
+                        "box": {
+                            "l": 0.13504484,
+                            "t": 0.15883815,
+                            "w": 0.1866175,
+                            "h": 0.34143007
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99913305
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99913305
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99913305
+                            }
+                        ],
+                        "box": {
+                            "l": 0.120749295,
+                            "t": 0.1535887,
+                            "w": 0.19649702,
+                            "h": 0.3242941
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9997886
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9997886
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9997886
+                            }
+                        ],
+                        "box": {
+                            "l": 0.10312106,
+                            "t": 0.15004385,
+                            "w": 0.20947103,
+                            "h": 0.3131261
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99934965
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.99934965
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99934965
+                            }
+                        ],
+                        "box": {
+                            "l": 0.08939994,
+                            "t": 0.14809999,
+                            "w": 0.21413201,
+                            "h": 0.29987568
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9996431
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "blue",
+                                "confidence": 0.9996431
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9996431
+                            }
+                        ],
+                        "box": {
+                            "l": 0.07675475,
+                            "t": 0.14069292,
+                            "w": 0.21897015,
+                            "h": 0.29939532
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99939513
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "blue",
+                                "confidence": 0.99939513
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.99939513
+                            }
+                        ],
+                        "box": {
+                            "l": 0.06358278,
+                            "t": 0.13798624,
+                            "w": 0.2230798,
+                            "h": 0.28849876
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9996973
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "blue",
+                                "confidence": 0.9996973
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9996973
+                            }
+                        ],
+                        "box": {
+                            "l": 0.046709813,
+                            "t": 0.13361655,
+                            "w": 0.23021364,
+                            "h": 0.28189743
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9998084
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9998084
+                            },
+                            {
+                                "name": "type",
+                                "value": "van",
+                                "confidence": 0.9998084
+                            }
+                        ],
+                        "box": {
+                            "l": 0.034303926,
+                            "t": 0.13084425,
+                            "w": 0.23310712,
+                            "h": 0.27655244
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.999711
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.999711
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.999711
+                            }
+                        ],
+                        "box": {
+                            "l": 0.023314804,
+                            "t": 0.12637359,
+                            "w": 0.23412037,
+                            "h": 0.2749731
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9993461
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9993461
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9993461
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0038746595,
+                            "t": 0.123531535,
+                            "w": 0.2403484,
+                            "h": 0.26777947
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99968696
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99968696
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99968696
+                            }
+                        ],
+                        "box": {
+                            "l": 0.00042499602,
+                            "t": 0.11741896,
+                            "w": 0.23694387,
+                            "h": 0.26721835
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.99871576
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.99871576
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.99871576
+                            }
+                        ],
+                        "box": {
+                            "t": 0.12223454,
+                            "w": 0.22378291,
+                            "h": 0.26094604,
+                            "l": 0.0
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9975413
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9975413
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9975413
+                            }
+                        ],
+                        "box": {
+                            "t": 0.12262325,
+                            "w": 0.21014003,
+                            "h": 0.2553811,
+                            "l": 0.0
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9959125
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9959125
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9959125
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0030209646,
+                            "t": 0.12180786,
+                            "w": 0.19676968,
+                            "h": 0.24739976
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9883831
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9883831
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9883831
+                            }
+                        ],
+                        "box": {
+                            "t": 0.12093838,
+                            "w": 0.18935803,
+                            "h": 0.24800667,
+                            "l": 0.0
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.9664846
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.9664846
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.9664846
+                            }
+                        ],
+                        "box": {
+                            "t": 0.12208142,
+                            "w": 0.1727923,
+                            "h": 0.24584591,
+                            "l": 0.0
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.89238954
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.89238954
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.89238954
+                            }
+                        ],
+                        "box": {
+                            "l": 0.00018722564,
+                            "t": 0.11869307,
+                            "w": 0.1640375,
+                            "h": 0.24255715
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                },
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.63303065
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.63303065
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.63303065
+                            }
+                        ],
+                        "box": {
+                            "l": 0.85714084,
+                            "t": 0.119458675,
+                            "w": 0.09547472,
+                            "h": 0.11928654
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.8367465
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.8367465
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.8367465
+                            }
+                        ],
+                        "box": {
+                            "l": 6.941706e-05,
+                            "t": 0.12485276,
+                            "w": 0.14842415,
+                            "h": 0.24359055
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.87595314
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.87595314
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.87595314
+                            }
+                        ],
+                        "box": {
+                            "l": 0.00030141324,
+                            "t": 0.12744617,
+                            "w": 0.13485992,
+                            "h": 0.23483276
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.7296052
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.7296052
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.7296052
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0007182956,
+                            "t": 0.13060385,
+                            "w": 0.12615038,
+                            "h": 0.2302011
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                },
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.50997865
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "red",
+                                "confidence": 0.50997865
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.50997865
+                            }
+                        ],
+                        "box": {
+                            "l": 0.8818053,
+                            "t": 0.12259641,
+                            "w": 0.09627473,
+                            "h": 0.12034446
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.7311534
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.7311534
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.7311534
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0008184947,
+                            "t": 0.13186166,
+                            "w": 0.110164315,
+                            "h": 0.22914496
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                },
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.6940013
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "red",
+                                "confidence": 0.6940013
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.6940013
+                            }
+                        ],
+                        "box": {
+                            "l": 0.89177996,
+                            "t": 0.12637854,
+                            "w": 0.09763992,
+                            "h": 0.114441335
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.7670289
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.7670289
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.7670289
+                            }
+                        ],
+                        "box": {
+                            "l": 0.00014172122,
+                            "t": 0.13369238,
+                            "w": 0.10187268,
+                            "h": 0.22470069
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                },
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.5033637
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.5033637
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.5033637
+                            }
+                        ],
+                        "box": {
+                            "l": 0.902861,
+                            "t": 0.129754,
+                            "w": 0.09419513,
+                            "h": 0.11353558
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.7723799
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "gray",
+                                "confidence": 0.7723799
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.7723799
+                            }
+                        ],
+                        "box": {
+                            "t": 0.13414821,
+                            "w": 0.082439445,
+                            "h": 0.22149637,
+                            "l": 0.0
+                        },
+                        "id": ""
+                    },
+                    "subtype": "",
+                    "inferenceId": "",
+                    "relatedInferences": [],
+                    "extensions": {}
+                }
+            ],
+            "timestamp": "0"
+        },
+        {
+            "inferences": [
+                {
+                    "type": "ENTITY",
+                    "entity": {
+                        "tag": {
+                            "value": "vehicle",
+                            "confidence": 0.53616023
+                        },
+                        "attributes": [
+                            {
+                                "name": "color",
+                                "value": "white",
+                                "confidence": 0.53616023
+                            },
+                            {
+                                "name": "type",
+                                "value": "car",
+                                "confidence": 0.53616023
+                            }
+                        ],
+                        "box": {
+                            "l": 0.0029289573,
+                            "t": 0.14456242,
+                            "w": 0.07106139,
+                            "h": 0.21277034
+                        },
                         "id": ""
                     },
                     "subtype": "",

@@ -8,13 +8,13 @@
             "params": {
                 "pipeline": {
                     "name": "object_tracking",
-                    "version": "person_vehicle_bike_tracking",
+                    "version": "person_vehicle_bike",
                     "extensions": {
                         "cam_angle": "left_to_right"
                     }
                 },
                 "source": "/home/edge-ai-extension/person-bicycle-car-detection.mp4",
-                "stream_id": "http_object_tracking_person_vehicle_bike_tracking_cpu_video_golden_truth",
+                "stream_id": "http_object_tracking_person_vehicle_bike_cpu_video_golden_truth",
                 "output_location": "",
                 "protocol": "http",
                 "loop_count": 1,

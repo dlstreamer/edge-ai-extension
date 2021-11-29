@@ -8,7 +8,7 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"person_vehicle_bike_detection"
+                    "version":"person_vehicle_bike"
                 },
                 "wait_to_complete": true,
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",

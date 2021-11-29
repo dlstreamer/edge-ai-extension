@@ -1,0 +1,34 @@
+{
+	"type": "GStreamer",
+	"template": ["appsrc name=source ! decodebin ! videoconvert",
+                " ! gvadetect model={models[object_detection][vehicle][network]} name=detection",
+                " ! appsink name=destination"],
+	"description": "Vehicle Detection using gstreamer gvadetect element",
+	"parameters": {
+		"type": "object",
+		"properties": {
+			"detection-device": {
+				"element": {
+					"name": "detection",
+					"property": "device"
+				},
+				"type": "string"
+			},
+			"detection-model-instance-id": {
+				"element": {
+					"name": "detection",
+					"property": "model-instance-id"
+				},
+				"type": "string"
+			},
+			"inference-interval": {
+				"element": "detection",
+				"type": "integer"
+			},
+			"threshold": {
+				"element": "detection",
+				"type": "number"
+			}
+		}
+	}
+}

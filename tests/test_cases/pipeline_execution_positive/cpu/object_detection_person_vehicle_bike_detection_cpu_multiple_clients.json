@@ -9,9 +9,9 @@
             "params": {
                 "pipeline": {
                     "name":"object_detection",
-                    "version":"person_vehicle_bike_detection",
+                    "version":"person_vehicle_bike",
                     "parameters": {
-                        "detection-model-instance-id": "object_detection_person_vehicle_bike_detection_cpu_multiple_clients"
+                        "detection-model-instance-id": "object_detection_person_vehicle_bike_cpu_multiple_clients"
                     }
                 },
                 "source":"/home/edge-ai-extension/sampleframes/sample01.png",

@@ -16,10 +16,10 @@ The Intel® DL Streamer – Edge AI Extension Module is a microservice based on 
 
 | Name | Version   | Model |
 | -----|-----------| ------|
-| person_vehicle_bike_detection| 1 |[person-vehicle-bike-detection-crossroad-0078](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/person-vehicle-bike-detection-crossroad-0078/README.md)|
+| object_detection| person_vehicle_bike |[person-vehicle-bike-detection-crossroad-0078](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/person-vehicle-bike-detection-crossroad-0078/README.md)|
 | object_detection|person|[person-detection-retail-0013](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/person-detection-retail-0013/README.md)|
 | object_detection|vehicle|[vehicle-detection-0202](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/vehicle-detection-0202/README.md)|
-| vehicle_attributes_recognition|1|[vehicle-attributes-recognition-barrier-0039](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/vehicle-attributes-recognition-barrier-0039/README.md)|
+| object_classification |vehicle_attributes|[vehicle-attributes-recognition-barrier-0039](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/vehicle-attributes-recognition-barrier-0039/README.md)|
 | action_recognition|decoder|[action-recognition-0001-decoder](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/action-recognition-0001/README.md)|
 | action_recognition|encoder|[action-recognition-0001-encoder](https://github.com/openvinotoolkit/open_model_zoo/blob/2021.4/models/intel/action-recognition-0001/README.md)|
 
@@ -132,10 +132,12 @@ The following pipelines are included in the AI Extension:
 
 | Name          | Version       | Definition      | Diagram |
 | ------------- | ------------- | --------------- | ------- |
-| object_detection | person_vehicle_bike_detection  | [definition](pipelines/object_detection/person_vehicle_bike_detection/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
+| object_detection | person_vehicle_bike | [definition](pipelines/object_detection/person_vehicle_bike/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
+| object_detection | person  | [definition](pipelines/object_detection/person/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
+| object_detection | vehicle  | [definition](pipelines/object_detection/vehicle/pipeline.json)|![diagram](pipeline_diagrams/object-detection.png)|
 | object_detection | object_zone_count | [definition](pipelines/object_detection/object_zone_count/pipeline.json)|![diagram](pipeline_diagrams/zone-detection.png)|
-| object_classification  | vehicle_attributes_recognition  | [definition](pipelines/object_classification/vehicle_attributes_recognition/pipeline.json)|![diagram](pipeline_diagrams/object-classification.png)|
-| object_tracking  | person_vehicle_bike_tracking  | [definition](pipelines/object_tracking/person_vehicle_bike_tracking/pipeline.json)|![diagram](pipeline_diagrams/object-tracking.png)|
+| object_classification  | vehicle_attributes  | [definition](pipelines/object_classification/vehicle_attributes/pipeline.json)|![diagram](pipeline_diagrams/object-classification.png)|
+| object_tracking  | person_vehicle_bike  | [definition](pipelines/object_tracking/person_vehicle_bike/pipeline.json)|![diagram](pipeline_diagrams/object-tracking.png)|
 | object_tracking  | object_line_crossing  | [definition](pipelines/object_tracking/object_line_crossing/pipeline.json)|![diagram](pipeline_diagrams/line-crossing.png)|
 | action_recognition | general  | [definition](pipelines/action_recognition/general/pipeline.json)|![diagram](pipeline_diagrams/action-recognition.png)|
 
@@ -155,7 +157,7 @@ The Azure Video Analyzer (AVA) Server supports the extension_configuration field
 {
     "pipeline": {
         "name": "object_detection",
-        "version": "person_vehicle_bike_detection",
+        "version": "person_vehicle_bike",
         "parameters": {},
         "frame-destination": {},
         "extensions":{}
@@ -183,7 +185,7 @@ Example extension_configuration
 {
     "pipeline": {
         "name": "object_detection",
-        "version": "person_vehicle_bike_detection",
+        "version": "person_vehicle_bike",
         "parameters": { "detection-device": "GPU"}
     }
 }
@@ -217,7 +219,7 @@ Pipelines can be configured to connect and visualize input video with superimpos
 ```
 * Run client with frame destination set. For demonstration, path set as `person-detection` in example request below.
 ```
-./docker/run_client.sh --pipeline-name object_detection --pipeline-version person_vehicle_bike_detection --sample-file-path https://github.com/intel-iot-devkit/sample-videos/blob/master/people-detection.mp4?raw=true --frame-destination '{\"type\":\"rtsp\",\"path\":\"person-detection\"}'
+./docker/run_client.sh --pipeline-name object_detection --pipeline-version person_vehicle_bike --sample-file-path https://github.com/intel-iot-devkit/sample-videos/blob/master/people-detection.mp4?raw=true --frame-destination '{\"type\":\"rtsp\",\"path\":\"person-detection\"}'
 ```
 * Connect and visualize: Re-stream pipeline using VLC network stream with url `rtsp://localhost:8554/person-detection`.
 
@@ -226,7 +228,7 @@ Pipelines can be configured to connect and visualize input video with superimpos
 {
     "pipeline": {
         "name": "object_detection",
-        "version": "person_vehicle_bike_detection",
+        "version": "person_vehicle_bike",
         "frame-destination": { "type":"rtsp", "path":"person-detection"}
     }
 }
@@ -359,7 +361,7 @@ All arguments are optional, usage is as follows
   [ --output-file-path : Specify the output file path to save inference results in jsonl format] (defaults to /tmp/results.jsonl)
   [ --extension-config : JSON string or file containing extension configuration]
   [ --pipeline-name : Name of the pipeline to run](defaults to object_detection)
-  [ --pipeline-version : Name of the pipeline version to run] (defaults to person_vehicle_bike_detection)
+  [ --pipeline-version : Name of the pipeline version to run] (defaults to person_vehicle_bike)
   [ --pipeline-parameters : Pipeline parameters]
   [ --pipeline-extensions : JSON string containing tags to be added to extensions field in results]
   [ --frame-destination : Frame destination for rtsp restreaming]
@@ -396,7 +398,7 @@ Get baseline results for existing object_detection model `person-vehicle-bike-de
 ```
 ```
 <snip>
-/object_classification/vehicle_attributes_recognition/pipeline.json", "module": "pipeline_manager"}
+/object_classification/vehicle_attributes/pipeline.json", "module": "pipeline_manager"}
 {"levelname": "INFO", "asctime": "2021-01-21 12:10:10,288", "message": "===========================", "module": "pipeline_manager"}
 {"levelname": "INFO", "asctime": "2021-01-21 12:10:10,288", "message": "Completed Loading Pipelines", "module": "pipeline_manager"}
 {"levelname": "INFO", "asctime": "2021-01-21 12:10:10,289", "message": "===========================", "module": "pipeline_manager"}
@@ -423,12 +425,12 @@ In a separate terminal:
 
 ## Send a request to the server to run a different pipeline
 ```
-./docker/run_client.sh --pipeline-name object_classification --pipeline-version vehicle_attributes_recognition
+./docker/run_client.sh --pipeline-name object_classification --pipeline-version vehicle_attributes
 ```
 
 ## Send a request to the server to run a different pipeline on the GPU
 ```
-./docker/run_client.sh --pipeline-name object_detection --pipeline-version person_vehicle_bike_detection --pipeline-parameters '{\"detection-device\":\"GPU\"}'
+./docker/run_client.sh --pipeline-name object_detection --pipeline-version person_vehicle_bike --pipeline-parameters '{\"detection-device\":\"GPU\"}'
 ```
 
 ## Add New Model to Models List
@@ -447,8 +449,8 @@ Copy the existing model list `models_list/models.list.yml` to `models_list/yolo-
 Copy, rename and update the existing object detection pipeline to reference `yolo-v2-tiny-tf` model:
 
 ```bash
-cp -r pipelines/object_detection/person_vehicle_bike_detection pipelines/object_detection/yolo
-sed -i -e s/person_vehicle_bike_detection/yolo/g pipelines/object_detection/yolo/pipeline.json
+cp -r pipelines/object_detection/person_vehicle_bike pipelines/object_detection/yolo
+sed -i -e s/person_vehicle_bike/yolo/g pipelines/object_detection/yolo/pipeline.json
 ```
 
 ## Rebuild Edge AI Extension with new Model and Pipeline
@@ -481,9 +483,9 @@ docker run -it --entrypoint /bin/bash video-analytics-serving:0.6.1-dlstreamer-e
 ```
 ```
 vaserving@82dd59743ca3:~$ ls models
-person_vehicle_bike_detection  vehicle_attributes_recognition  yolo
-vaserving@82dd59743ca3:~$ ls pipelines/object_detection/person_vehicle_bike_detection
-  person_vehicle_bike_detection  yolo
+action_recognition object_classification object_detection yolo
+vaserving@82dd59743ca3:~$ ls pipelines/object_detection
+  person_vehicle_bike person vehicle yolo
 ```
 
 ## Run Edge AI Extension with new Model and Pipeline
