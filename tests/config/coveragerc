@@ -1,6 +1,6 @@
 [run]
 data_file = /home/edge-ai-extension/tests/results/pytest/.coverage
-concurrency = multiprocessing
+concurrency = multiprocessing, thread
 
 [report]
 include = server/*, client/*, common/*
