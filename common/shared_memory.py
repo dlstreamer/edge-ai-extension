@@ -22,6 +22,7 @@
 * SOFTWARE
 '''
 
+from threading import Lock
 import tempfile
 import mmap
 import os
@@ -67,6 +68,7 @@ class SharedMemoryManager:
             # Dictionary to host reserved mem blocks
             # self._mem_slots[sequenceNo] = [Begin, End]        (closed interval)
             self._mem_slots = dict()
+            self._create_delete_lock = Lock()
 
             logging.info('Shared memory name: {0}'.format(self._shm_file_full_path))
         except:
@@ -105,41 +107,42 @@ class SharedMemoryManager:
 
         if size_needed < 1:
             return address
-
-        # Empty memory
-        if len(self._mem_slots) < 1:
-            if self.shm_file_size >= size_needed:
-                self._mem_slots[seq_no] = (0, size_needed - 1)
-                address = (0, size_needed - 1)
+        with self._create_delete_lock:
+            # Empty memory
+            if len(self._mem_slots) < 1:
+                if self.shm_file_size >= size_needed:
+                    self._mem_slots[seq_no] = (0, size_needed - 1)
+                    address = (0, size_needed - 1)
+                else:
+                    address = None
             else:
-                address = None
-        else:
-            self._mem_slots = dict(sorted(self._mem_slots.items(), key=lambda item: item[1]))
+                self._mem_slots = dict(sorted(self._mem_slots.items(), key=lambda item: item[1]))
 
-            # find an available memory gap = sizeNeeded
-            prev_slot_end = 0
-            for _, memory_slot in self._mem_slots.items():
-                if (memory_slot[0] - prev_slot_end - 1) >= size_needed:
-                    address = (prev_slot_end + 1, prev_slot_end + size_needed)
-                    self._mem_slots[seq_no] = (address[0], address[1])
-                    break
-                prev_slot_end = memory_slot[1]
+                # find an available memory gap = sizeNeeded
+                prev_slot_end = 0
+                for _, memory_slot in self._mem_slots.items():
+                    if (memory_slot[0] - prev_slot_end - 1) >= size_needed:
+                        address = (prev_slot_end + 1, prev_slot_end + size_needed)
+                        self._mem_slots[seq_no] = (address[0], address[1])
+                        break
+                    prev_slot_end = memory_slot[1]
 
-            # no gap in between, check last possible gap
-            if address is None:
-                if (self.shm_file_size - prev_slot_end + 1) >= size_needed:
-                    address = (prev_slot_end, prev_slot_end + size_needed)
-                    self._mem_slots[seq_no] = (address[0], address[1])
+                # no gap in between, check last possible gap
+                if address is None:
+                    if (self.shm_file_size - prev_slot_end + 1) >= size_needed:
+                        address = (prev_slot_end, prev_slot_end + size_needed)
+                        self._mem_slots[seq_no] = (address[0], address[1])
 
-        # interval [Begin, End]
-        return address
+            # interval [Begin, End]
+            return address
 
     def delete_slot(self, seq_no):
-        try:
-            del self._mem_slots[seq_no]
-            return True
-        except KeyError:
-            return False
+        with self._create_delete_lock:
+            try:
+                del self._mem_slots[seq_no]
+                return True
+            except KeyError:
+                return False
 
     def __del__(self):
         try:
