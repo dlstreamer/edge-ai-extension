@@ -1,8 +1,8 @@
 #!/bin/bash -e
 CURRENT_DIR=$(dirname $(readlink -f "$0"))
 ROOT_DIR=$(dirname $CURRENT_DIR)
-EXTENSION_IMAGE_TAG="video-analytics-serving:0.6.1-dlstreamer-edge-ai-extension"
-TEST_IMAGE_TAG="video-analytics-serving-ava-tests"
+EXTENSION_IMAGE_TAG="dlstreamer-edge-ai-extension:0.7.0"
+TEST_IMAGE_TAG="dlstreamer-edge-ai-extension-tests"
 SAMPLE_BUILD_ARGS=$(env | cut -f1 -d= | grep -E '_(proxy|REPO|VER)$' | sed 's/^/--build-arg / ' | tr '\n' ' ')
 
 function launch { $@

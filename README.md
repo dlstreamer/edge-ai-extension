@@ -50,7 +50,7 @@ Run the docker image build script.
 ```
 ./docker/build.sh
 ```
-Resulting image name is `video-analytics-serving:0.6.1-dlstreamer-edge-ai-extension`
+Resulting image name is `dlstreamer-edge-ai-extension:0.7.0`
 
 ## Running the Edge AI Extension Module
 
@@ -237,7 +237,7 @@ Pipelines can be configured to connect and visualize input video with superimpos
 ### Logging
 Run the following command to monitor the logs from the docker container
 ```bash
-docker logs video-analytics-serving_0.6.1-dlstreamer-edge-ai-extension -f
+docker logs dlstreamer-edge-ai-extension_0.7.0 -f
 ```
 
 ### Developer Mode
@@ -479,7 +479,7 @@ models
 Check that expected model and pipeline are present in the built image:
 
 ```bash
-docker run -it --entrypoint /bin/bash video-analytics-serving:0.6.1-dlstreamer-edge-ai-extension
+docker run -it --entrypoint /bin/bash dlstreamer-edge-ai-extension:0.7.0
 ```
 ```
 vaserving@82dd59743ca3:~$ ls models
@@ -493,7 +493,7 @@ vaserving@82dd59743ca3:~$ ls pipelines/object_detection
 ### Restart service
 Restart the service to ensure we are using the image with the yolo-v2-tiny-tf model
 ```
-docker stop video-analytics-serving_0.6.1-dlstreamer-edge-ai-extension
+docker stop dlstreamer-edge-ai-extension_0.7.0
 docker/run_server.sh
 ```
 ### Run the client

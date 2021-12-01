@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGE=video-analytics-serving-ava-tests
+IMAGE=dlstreamer-edge-ai-extension-tests
 CURRENT_DIR=$(dirname $(readlink -f "$0"))
 ROOT_DIR=$(dirname $CURRENT_DIR)
 TESTS_DIR="$ROOT_DIR/tests"

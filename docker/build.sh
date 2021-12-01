@@ -4,7 +4,7 @@ CURRENT_DIR=$(dirname $(readlink -f "$0"))
 ROOT_DIR=$(dirname $CURRENT_DIR)
 BUILD_ARGS=$(env | cut -f1 -d= | grep -E '_(proxy|REPO|VER)$' | sed 's/^/--build-arg / ' | tr '\n' ' ')
 MODELS="$ROOT_DIR/models_list/models.list.yml"
-TAG="video-analytics-serving:0.6.1-dlstreamer-edge-ai-extension"
+TAG="dlstreamer-edge-ai-extension:0.7.0"
 FORCE_MODEL_DOWNLOAD=
 VAS_BASE="video-analytics-serving-runtime:latest"
 VAS_VER="v0.6.1-beta"
