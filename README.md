@@ -1,9 +1,9 @@
-# Intel® DL Streamer – Edge AI Extension Module
+# Intel® DL Streamer – Edge AI Extension
 
-| [Getting Started](#getting-started) | [Edge AI Extension Module Options](#edge-ai-extension-module-options) | [Additional Examples](#additional-standalone-edge-ai-extension-examples) | [Spatial Analytics](#spatial-analytics-pipelines)| [Test Client](#test-client) |
+| [Getting Started](#getting-started) | [Edge AI Extension Options](#edge-ai-extension-options) | [Additional Examples](#additional-standalone-edge-ai-extension-examples) | [Spatial Analytics](#spatial-analytics-pipelines)| [Test Client](#test-client) |
 [Changing Models](#updating-or-changing-detection-and-classification-models)
 
-The Intel® DL Streamer – Edge AI Extension Module is a microservice based on [Video Analytics Serving](https://github.com/intel/video-analytics-serving) that provides video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI Extension module which performs detection, classification, or tracking and returns the results. The AI Extension module exposes [gRPC APIs](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) that are compatible with [Azure Video Analyzer](https://azure.microsoft.com/en-us/products/video-analyzer/) (AVA). Powered by OpenVINO™ toolkit, the AI Extension module enables developers to build, optimize and deploy deep learning inference workloads for maximum performance across Intel® architectures.
+The Intel® DL Streamer – Edge AI Extension is a microservice based on [Video Analytics Serving](https://github.com/intel/video-analytics-serving) that provides video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI Extension which performs detection, classification, or tracking and returns the results. The AI Extension exposes [gRPC APIs](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) that are compatible with [Azure Video Analyzer](https://azure.microsoft.com/en-us/products/video-analyzer/) (AVA). Powered by OpenVINO™ toolkit, the AI Extension enables developers to build, optimize and deploy deep learning inference workloads for maximum performance across Intel® architectures.
 
 ## Highlights
 
@@ -32,9 +32,9 @@ The Intel® DL Streamer – Edge AI Extension Module is a microservice based on 
 
 # Getting Started
 
-The Intel® DL Streamer – Edge AI Extension Module can run as a standalone microservice or as a module within an Azure Video Analyzer graph. For more information on deploying the module as part of a Azure Video Analyzer graph please see [Configuring the AI Extension Module for Azure Video Analyzer](#configuring-the-ai-extension-module-for-live-video-analytics) and refer to the [Azure Video Analyzer documentation](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/overview). The following instructions demonstrate building and running the microservice and test client outside of Azure Video Analyzer.
+The Intel® DL Streamer – Edge AI Extension can run as a standalone microservice or as a module within an Azure Video Analyzer graph. For more information on deploying the module as part of a Azure Video Analyzer graph please see [Configuring the AI Extension for Azure Video Analyzer](#configuring-the-ai-extension-for-live-video-analytics) and refer to the [Azure Video Analyzer documentation](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/overview). The following instructions demonstrate building and running the microservice and test client outside of Azure Video Analyzer.
 
-## Building the Edge AI Extension Module Image
+## Building the Edge AI Extension Image
 
 ### Prerequisites
 Building the image requires a modern Linux distro with the following packages installed:
@@ -52,7 +52,7 @@ Run the docker image build script.
 ```
 Resulting image name is `dlstreamer-edge-ai-extension:0.7.0`
 
-## Running the Edge AI Extension Module
+## Running the Edge AI Extension
 
 To run the module as a standalone microservice with an `object_detection` pipeline use the `run_server.sh` script with default options. For examples of additional options see [Additional Standalone Edge AI Extension Examples](#additional-standalone-edge-ai-extension-examples).
 
@@ -113,7 +113,7 @@ To send a test frame to the microservice and receive `object_detection` results 
 [AIXC] [2021-01-22 15:28:07,943] [MainThread  ] [INFO]: Client finished execution
 ```
 
-# Edge AI Extension Module Options
+# Edge AI Extension Options
 
 The module can be configured using command line options or environment variables (command line options take precedence).
 
@@ -190,7 +190,7 @@ Example extension_configuration
     }
 }
 ```
-## Configuring the AI Extension Module for Azure Video Analyzer
+## Configuring the AI Extension for Azure Video Analyzer
 
 Please refer to the [Analyze live video with Intel OpenVINO™ DL Streamer – Edge AI Extension](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/use-intel-grpc-video-analytics-serving-tutorial) tutorial for deployment manifests, topologies or operations files and other details.
 
@@ -338,7 +338,7 @@ To get a visual of `object_line_crossing` extension, run with `object_line_cross
 3. Connect and visualize: Re-stream pipeline using VLC network stream with url `rtsp://localhost:8554/vaserving`.
 
 # Test Client
-A test client is provided to demonstrate the capabilities of the Edge AI Extension module.
+A test client is provided to demonstrate the capabilities of the Edge AI Extension.
 The test client script `run_client.sh` sends frames(s) to the extension module and prints inference results.
 Use the --help option to see how to use the script. All arguments are optional.
 
