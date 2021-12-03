@@ -107,6 +107,8 @@ class HttpClient(Client):
 
         if response.status_code == 200:
             result_json["mediaSample"] = json.loads(response.text)
+        elif response.status_code == 204 and data is None:
+            result_json = None
         elif response.status_code != 204:
             result_json = None
             error_text = " Response code: {}, Message: {}".format(response.status_code, response.text)

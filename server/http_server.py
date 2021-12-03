@@ -177,9 +177,7 @@ class HttpServer(Server):
             else:
                 self._set_response(resp, _HTTP_204)
         else:
-            response_message = "Received empty frame, stopping pipeline {}".format(
-                stream_id)
-            self._set_response(resp, _HTTP_400, response_message, error=True)
+            self._set_response(resp, _HTTP_204)
             if not pipeline_processor.stopped():
                 self._logger.error("Failed to gracefully stop pipeline")
             self._stop_pipeline(stream_id)
