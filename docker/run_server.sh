@@ -67,10 +67,14 @@ error() {
 
 enable_hardware_access() {
     # GPU
-    if ls /dev/dri/render* 1> /dev/null 2>&1; then
+    if compgen -G /dev/dri/render* > /dev/null; then
         echo "Found /dev/dri/render entry - enabling for GPU"
         DEVICES+='--device /dev/dri '
-        USER_GROUPS+="--group-add $(stat -c '%g' /dev/dri/render*) "
+        RENDER_GROUPS=$(stat -c '%g' /dev/dri/render*)
+        for group in $RENDER_GROUPS
+        do
+            USER_GROUPS+="--group-add $group "
+        done
     fi
 
     # Intel(R) NCS2
@@ -78,6 +82,12 @@ enable_hardware_access() {
         echo "Found /dev/bus/usb - enabling for Intel(R) NCS2"
         DEVICE_CGROUP_RULE=--device-cgroup-rule=\'c\ 189:*\ rmw\'
         VOLUME_MOUNT+="-v /dev/bus/usb:/dev/bus/usb "
+    fi
+
+    # HDDL (also requires /dev/shm but this has already been done for shared memory frame transfer)
+    if compgen -G /dev/myriad* > /dev/null ; then
+        echo "Found /dev/myriad devices - enabling for HDDL-R"
+        VOLUME_MOUNT+="-v /var/tmp:/var/tmp "
     fi
 }
 
