@@ -7,7 +7,7 @@ MODELS="$ROOT_DIR/models_list/models.list.yml"
 TAG="dlstreamer-edge-ai-extension:0.7.0"
 FORCE_MODEL_DOWNLOAD=
 VAS_BASE="video-analytics-serving-runtime:latest"
-VAS_VER="v0.6.1-beta"
+VAS_VER="v0.7.0-beta"
 VAS_REPO="https://github.com/intel/video-analytics-serving"
 BASE_IMAGE=
 VAS_DIR=
@@ -102,9 +102,7 @@ $VAS_DIR/tools/model_downloader/model_downloader.sh --model-list "$MODELS" \
 if [ -z "$BASE_IMAGE" ]; then
     echo "Building video-analytics-serving as $VAS_BASE"
     launch "$VAS_DIR/docker/build.sh --framework gstreamer --create-service false \
-            --models NONE --tag $VAS_BASE"
-            #TODO: Set --pipelines NONE for 0.7 release, currently external github doesn't copy extensions with --pipelines NONE
-            #--pipelines NONE --models NONE --tag $VAS_BASE"
+            --pipelines NONE --models NONE --tag $VAS_BASE"
 else
     echo "Using Base image $BASE_IMAGE"
     BUILD_ARGS+=" --build-arg BASE=$BASE_IMAGE "
