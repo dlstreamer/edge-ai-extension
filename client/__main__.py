@@ -92,7 +92,7 @@ def _log_fps(start_time, frames_received, prev_fps_delta, fps_interval):
     delta = int(time.time() - start_time)
     if (fps_interval > 0) and (delta != prev_fps_delta) and (delta % fps_interval == 0):
         logging.info(
-            "FPS: {} Frames Recieved: {}".format(
+            "FPS: {} Frames Received: {}".format(
                 (frames_received / delta), frames_received
             )
         )
