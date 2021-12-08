@@ -12,29 +12,16 @@ Third party programs and their corresponding required notices and/or license ter
    pip3
     Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
 
-   jsonschema
-    Copyright (c) 2013 Julian Berman
-
    rfc3986-validator
     Copyright (c) 2019, Nicolas Aimetti
 
    rfc3339-validator
     Copyright (c) 2019, Nicolas Aimetti
 
-   pyyaml
-    Copyright (c) 2017-2020 Ingy döt Net
-    Copyright (c) 2006-2016 Kirill Simonov
-
-   Live Video Analytics
-   https://azure.microsoft.com/en-us/services/media-services/live-video-analytics/
+   Azure Video Analytics
+   https://azure.microsoft.com/en-us/products/video-analyzer/
     Copyright 2020 Microsoft Corporation
     Modifications Copyright 2020 Intel Corporation
-
-   VAAPI driver for the Intel GEN8+ Graphics family
-    Copyright (c) 2017-2021, Intel Corporation
-
-   Intel OpenCL
-    Copyright (C) 2018-2021 Intel Corporation
 
 MIT License
 
@@ -47,33 +34,27 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 2. grpcio
     Copyright 2014 gRPC authors.
-
-   aclnet
-    https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/aclnet
-    Copyright (c) 2020 Intel Corporation
-
+   
    person-vehicle-bike-detection-crossroad-0078
    vehicle-attributes-recognition-barrier-0039
    vehicle-detection-0202
    person-detection-retail-0013
    action-recognition-0001-decoder
    action-recognition-0001-encoder
-   driver-action-recognition-adas-0002-decoder
-   driver-action-recognition-adas-0002-encoder
-    https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel
+   https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel
     Copyright (c) 2021 Intel Corporation
-   
+
    Requests
     Copyright 2019 Kenneth Reitz
-
-   swagger-ui-bundle
-    Copyright 2020 SmartBear Software Inc.
 
    Tornado Web Server
     Copyright: 2009-2011 Facebook
 
    Zalando Connexion
     Copyright 2015 Zalando SE
+
+   Falcon
+    Copyright 2013 by Rackspace Hosting, Inc.
 
 Apache 2.0 License
  
@@ -281,89 +262,7 @@ Apache 2.0 License
 
 -------------------------------------------------------------
 
-3. Python 3
-   Copyright © 2001-2020 Python Software Foundation; All Rights
-   Reserved
-
-    1. This LICENSE AGREEMENT is between the Python Software Foundation ("PSF"), and
-    the Individual or Organization ("Licensee") accessing and otherwise using Python
-    3.9.0 software in source or binary form and its associated documentation.
-
-    2. Subject to the terms and conditions of this License Agreement, PSF hereby
-    grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce,
-    analyze, test, perform and/or display publicly, prepare derivative works,
-    distribute, and otherwise use Python 3.9.0 alone or in any derivative
-    version, provided, however, that PSF's License Agreement and PSF's notice of
-    copyright, i.e., "Copyright © 2001-2020 Python Software Foundation; All Rights
-    Reserved" are retained in Python 3.9.0 alone or in any derivative version
-    prepared by Licensee.
-
-    3. In the event Licensee prepares a derivative work that is based on or
-    incorporates Python 3.9.0 or any part thereof, and wants to make the
-    derivative work available to others as provided herein, then Licensee hereby
-    agrees to include in any such work a brief summary of the changes made to Python
-    3.9.0.
-
-    4. PSF is making Python 3.9.0 available to Licensee on an "AS IS" basis.
-    PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED.  BY WAY OF
-    EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND DISCLAIMS ANY REPRESENTATION OR
-    WARRANTY OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE
-    USE OF PYTHON 3.9.0 WILL NOT INFRINGE ANY THIRD PARTY RIGHTS.
-
-    5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON 3.9.0
-    FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS A RESULT OF
-    MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 3.9.0, OR ANY DERIVATIVE
-    THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.
-
-    6. This License Agreement will automatically terminate upon a material breach of
-    its terms and conditions.
-
-    7. Nothing in this License Agreement shall be deemed to create any relationship
-    of agency, partnership, or joint venture between PSF and Licensee.  This License
-    Agreement does not grant permission to use PSF trademarks or trade name in a
-    trademark sense to endorse or promote products or services of Licensee, or any
-    third party.
-
-    8. By copying, installing or otherwise using Python 3.9.0, Licensee agrees
-    to be bound by the terms and conditions of this License Agreement.
-
--------------------------------------------------------------
-
-4. Numpy (BSD 3-clause Numpy Customized)
-    Copyright (c) 2005-2020, NumPy Developers.
-    All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-    * Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
-
-    * Redistributions in binary form must reproduce the above
-       copyright notice, this list of conditions and the following
-       disclaimer in the documentation and/or other materials provided
-       with the distribution.
-
-    * Neither the name of the NumPy Developers nor the names of any
-       contributors may be used to endorse or promote products derived
-       from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
--------------------------------------------------------------
-
-5. protobuf (BSD 3-clause Google Customized)
+3. protobuf (BSD 3-clause Google Customized)
     Copyright 2008 Google Inc.  All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -399,74 +298,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -------------------------------------------------------------
 
-6. python-psutil 
-    Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola'
-    All rights reserved.
-
-BSD 3-Clause License
-
-Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola'
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
-
- * Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-
- * Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
- * Neither the name of the psutil authors nor the names of its contributors
-   may be used to endorse or promote products derived from this software without
-   specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
--------------------------------------------------------------
-
-7. jemalloc
-  
-Unless otherwise specified, files in the jemalloc source distribution are
-subject to the following license:
-
-Copyright (C) 2002-present Jason Evans <jasone@canonware.com>.
-All rights reserved.
-Copyright (C) 2007-2012 Mozilla Foundation.  All rights reserved.
-Copyright (C) 2009-present Facebook, Inc.  All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-1. Redistributions of source code must retain the above copyright notice(s),
-   this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice(s),
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) ``AS IS'' AND ANY EXPRESS
-OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
-EVENT SHALL THE COPYRIGHT HOLDER(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
--------------------------------------------------------------
-
-8. Python Paho MQTT Client
+4. Python Paho MQTT Client
 
 Eclipse Distribution License - v 1.0
 Copyright (c) 2007, Eclipse Foundation, Inc. and its licensors.
@@ -482,7 +314,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 -------------------------------------------------------------
 
-9. python-dateutil
+5. python-dateutil
 
 Copyright 2017- Paul Ganssle <paul@ganssle.io>
 Copyright 2017- dateutil contributors (see AUTHORS file)
@@ -540,45 +372,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The above BSD License Applies to all code, even that also covered by Apache 2.0.
 
 -------------------------------------------------------------
-10. Media-Driver
-    Copyright (c) 2007-2017 Intel Corporation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Copyright (c) 2010, The WebM Project authors. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-Neither the name of Google, nor the WebM Project, nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Copyright 1999 Precision Insight, Inc., Cedar Park, Texas. Copyright 2000 VA Linux Systems, Inc., Sunnyvale, California. Copyright (c) 2008 Red Hat Inc. Copyright (c) 2007-2008 Tungsten Graphics, Inc., Cedar Park, TX., USA Copyright (c) 2007-2008 Intel Corporation Copyright 2002 Tungsten Graphics, Inc., Cedar Park, Texas. Copyright 2003 Tungsten Graphics, Inc., Cedar Park, Texas. Copyright 2006 Tungsten Graphics, Inc., Bismarck, ND. USA. Copyright © 2014 NVIDIA Corporation Copyright 1999 Precision Insight, Inc., Cedar Park, Texas. Copyright (c) 2007-2008 Tungsten Graphics, Inc., Cedar Park, Texas. Copyright © 2007 Red Hat Inc. Copyright © 2007-2012 Intel Corporation Copyright 2006 Tungsten Graphics, Inc., Bismarck, ND., USA Copyright 1999 Precision Insight, Inc., Cedar Park, Texas. Copyright 2000 VA Linux Systems, Inc., Sunnyvale, California. Sun Apr 18 09:35:45 1999 by faith@precisioninsight.com Copyright 1999 Precision Insight, Inc., Cedar Park, Texas. Copyright (c) 2007-2008 Tungsten Graphics, Inc., Cedar Park, Texas. Copyright 1999 Precision Insight, Inc., Cedar Park, Texas.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Copyright 2008, Google Inc. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. * Neither the name of Google Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
--------------------------------------------------------------
 
 * Docker Base Images
 
@@ -606,4 +399,6 @@ This docker installs third party components licensed under various open source l
 
 -------------------------------------------------------------
 Other names and brands may be claimed as the property of others. 
+
+
 
