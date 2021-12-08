@@ -99,6 +99,11 @@ def _log_fps(start_time, frames_received, prev_fps_delta, fps_interval):
         return delta
     return prev_fps_delta
 
+def _get_client(args, image):
+    if args.protocol == constants.GRPC_PROTOCOL:
+        height, width, _ = image.shape
+        return GrpcClient(args, width, height, image.size)
+    return HttpClient(args)
 
 def main():
     frame_source = None
@@ -117,12 +122,7 @@ def main():
         if image is None:
             raise Exception("Error getting frame from video source: {}".format(args.sample_file))
 
-        height, width, _ = image.shape
-
-        if args.protocol == constants.GRPC_PROTOCOL:
-            client = GrpcClient(args, width, height, image.size)
-        else:
-            client = HttpClient(args)
+        client = _get_client(args, image)
         result_processor = ResultsProcessor()
         with open(args.output_file, "w") as output:
             start_time = time.time()

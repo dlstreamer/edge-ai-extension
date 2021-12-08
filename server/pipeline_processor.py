@@ -147,6 +147,15 @@ class PipelineProcessor:
         if gva_sample is None:
             return None
         msg = extension_pb2.MediaStreamMessage()
+        self._add_media_stream_message_meta(gva_sample, msg)
+        inferences = msg.media_sample.inferences
+        self._add_action_recognition_results(gva_sample, inferences)
+        events = self._get_events_from_sample(gva_sample)
+        self._add_entities(gva_sample, inferences, events)
+        self._add_events(events, inferences)
+        return msg
+
+    def _add_media_stream_message_meta(self, gva_sample, msg):
         messages = list(gva_sample.video_frame.messages())
         if messages:
             message = json.loads(messages[0])
@@ -154,89 +163,76 @@ class PipelineProcessor:
                 msg.ack_sequence_number = message["sequence_number"]
             if message.get("timestamp", None):
                 msg.media_sample.timestamp = message["timestamp"]
-        inferences = msg.media_sample.inferences
-        events = self._get_events(gva_sample)
+
+    def _add_action_recognition_results(self, gva_sample, inferences):
         # gvaactionrecognitionbin element has no video frame regions
-        if not list(gva_sample.video_frame.regions()):
-            for tensor in gva_sample.video_frame.tensors():
-                if tensor.name() == "action":
-                    try:
-                        label = tensor.label()
-                        confidence = tensor.confidence()
-                        classification = inferencing_pb2.Classification(
-                            tag=inferencing_pb2.Tag(
-                                value=label, confidence=confidence
-                            )
-                        )
-                    except:
-                        log_exception(self._logger)
-                        raise
-                    inference = inferences.add()
-                    inference.type = (
-                        # pylint: disable=no-member
-                        inferencing_pb2.Inference.InferenceType.CLASSIFICATION
-                    )
-                    inference.classification.CopyFrom(classification)
-
-        for region_index, region in enumerate(gva_sample.video_frame.regions()):
-
-            attributes = []
-            obj_id = None
-            obj_label = None
-            obj_confidence = 0
-            obj_left = 0
-            obj_width = 0
-            obj_top = 0
-            obj_height = 0
-
-            for tensor in region.tensors():
-                if tensor.is_detection():
-                    obj_confidence = region.confidence()
-                    obj_label = region.label()
-
-                    obj_left, obj_top, obj_width, obj_height = region.normalized_rect()
-                    if region.object_id():  # Tracking
-                        obj_id = str(region.object_id())
-                elif tensor["label"]:  # Classification
-                    attr_name = tensor.name()
-                    attr_label = tensor["label"]
-                    attr_confidence = region.confidence()
-                    attributes.append([attr_name, attr_label, attr_confidence])
-
-            if obj_label is not None:
+        if list(gva_sample.video_frame.regions()):
+            return
+        for tensor in gva_sample.video_frame.tensors():
+            if tensor.name() == "action":
                 try:
-                    entity = inferencing_pb2.Entity(
+                    label = tensor.label()
+                    confidence = tensor.confidence()
+                    classification = inferencing_pb2.Classification(
                         tag=inferencing_pb2.Tag(
-                            value=obj_label, confidence=obj_confidence
-                        ),
-                        box=inferencing_pb2.Rectangle(
-                            l=obj_left, t=obj_top, w=obj_width, h=obj_height
-                        ),
-                    )
-                    for attr in attributes:
-                        attribute = inferencing_pb2.Attribute(
-                            name=attr[0], value=attr[1], confidence=attr[2]
+                            value=label, confidence=confidence
                         )
-                        entity.attributes.append(attribute)
-                    if obj_id:
-                        entity.id = obj_id
+                    )
                 except:
                     log_exception(self._logger)
                     raise
                 inference = inferences.add()
                 inference.type = (
                     # pylint: disable=no-member
+                    inferencing_pb2.Inference.InferenceType.CLASSIFICATION
+                )
+                inference.classification.CopyFrom(classification)
+                self._add_extensions(inference)
+
+    def _add_extensions(self, inference):
+        if self._extensions:
+            for key in self._extensions:
+                inference.extensions[key] = self._extensions[key]
+
+    def _get_entity_and_attributes(self, region):
+        attributes = []
+        entity = None
+        for tensor in region.tensors():
+            if tensor.is_detection():
+                obj_left, obj_top, obj_width, obj_height = region.normalized_rect()
+                entity = inferencing_pb2.Entity(
+                    tag=inferencing_pb2.Tag(
+                        value=region.label(), confidence=region.confidence()
+                    ),
+                    box=inferencing_pb2.Rectangle(
+                        l=obj_left, t=obj_top, w=obj_width, h=obj_height
+                    ),
+                )
+                if region.object_id():  # Tracking
+                    entity.id = str(region.object_id())
+            elif tensor["label"]:  # Classification
+                attributes.append([tensor.name(), tensor["label"], region.confidence()])
+        return entity, attributes
+
+    def _add_entities(self, gva_sample, inferences, events):
+        for region_index, region in enumerate(gva_sample.video_frame.regions()):
+            entity, attributes = self._get_entity_and_attributes(region)
+            if entity:
+                for attr in attributes:
+                    attribute = inferencing_pb2.Attribute(
+                        name=attr[0], value=attr[1], confidence=attr[2]
+                    )
+                    entity.attributes.append(attribute)
+                inference = inferences.add()
+                inference.type = (
+                    # pylint: disable=no-member
                     inferencing_pb2.Inference.InferenceType.ENTITY
                 )
-                if self._extensions:
-                    for key in self._extensions:
-                        inference.extensions[key] = self._extensions[key]
+                self._add_extensions(inference)
                 inference.entity.CopyFrom(entity)
                 self._update_inference_ids(events, inference, region_index)
-        self._process_events(events, inferences)
-        return msg
 
-    def _get_events(self, gva_sample):
+    def _get_events_from_sample(self, gva_sample):
         events = []
         for message in gva_sample.video_frame.messages():
             message_obj = json.loads(message)
@@ -254,7 +250,7 @@ class PipelineProcessor:
                         inference.subtype = "objectDetection"
                     event['related-objects'][i] = inference.inference_id
 
-    def _process_events(self, events, inferences):
+    def _add_events(self, events, inferences):
         for event in events:
             self._add_event(inferences, event)
 

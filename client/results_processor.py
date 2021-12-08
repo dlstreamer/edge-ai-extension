@@ -54,9 +54,9 @@ class ResultsProcessor:
         if inference.get("subtype", None):
             attribute_string = "{}: {}".format('subtype', inference["subtype"])
             attributes.append(attribute_string)
-        if inference.get("related_inferences", None):
+        if inference.get("relatedInferences", None):
             attribute_string = "{}: {}".format(
-                'relatedInferences', inference["related_inferences"])
+                'relatedInferences', inference["relatedInferences"])
             attributes.append(attribute_string)
         return attributes
 

@@ -54,7 +54,7 @@ class TransferType(Enum):
     HANDLE = 3  # Reserved
 
 
-class State:
+class State: # pylint: disable=too-few-public-methods
     def __init__(self, media_stream_descriptor):
         try:
             # media descriptor holding input data format
@@ -195,7 +195,7 @@ class GrpcServer(extension_pb2_grpc.MediaGraphExtensionServicer, Server):
 
     def ProcessMediaStream(self, request_iterator, context):
         # First message from the client is (must be) MediaStreamDescriptor
-        request = next(request_iterator)
+        request = next(request_iterator) # pylint: disable=stop-iteration-return
         # Extract message IDs
         request_seq_num = request.sequence_number
         request_ack_seq_num = request.ack_sequence_number
