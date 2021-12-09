@@ -125,7 +125,6 @@ To send a test frame to the microservice and receive `object_detection` results 
 [AIXC] [2021-12-01 21:57:06,948] [MainThread  ] [INFO]: ENTITY - person (0.80) [0.64, 0.36, 0.05, 0.27] []
 [AIXC] [2021-12-01 21:57:06,948] [MainThread  ] [INFO]: ENTITY - person (0.73) [0.68, 0.41, 0.04, 0.25] []
 [AIXC] [2021-12-01 21:57:06,948] [MainThread  ] [INFO]: ENTITY - person (0.66) [0.84, 0.44, 0.05, 0.27] []
-[AIXC] [2021-12-01 21:57:06,952] [MainThread  ] [ERROR]:  Response code: 400, Message: {"Error": "Received empty frame, stopping pipeline object_detection_person_vehicle_bike"}
 [AIXC] [2021-12-01 21:57:06,952] [MainThread  ] [INFO]: Start Time: 1638395826.5733032 End Time: 1638395826.9528449 Frames: Tx 1 Rx 1 FPS: 2.63475705016543
 [AIXC] [2021-12-01 21:57:06,954] [MainThread  ] [INFO]: Client finished execution
 ```
