@@ -33,7 +33,7 @@ The Intel® DL Streamer – Edge AI Extension is a microservice based on [Video 
 
 # Getting Started
 
-The Intel® DL Streamer – Edge AI Extension can run as a standalone microservice or as a module within an Azure Video Analyzer graph. For more information on deploying the module as part of a Azure Video Analyzer graph please see [Configuring the AI Extension for Azure Video Analyzer](#configuring-the-ai-extension-for-azure-video-analyzer) and refer to the [Azure Video Analyzer documentation](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/overview). The following instructions demonstrate building and running the microservice and test client outside of Azure Video Analyzer.
+The Intel® DL Streamer – Edge AI Extension can run as a standalone microservice or as a module within an Azure Video Analyzer graph. For more information on deploying the module as part of an Azure Video Analyzer graph please see [Configuring the AI Extension for Azure Video Analyzer](#configuring-the-ai-extension-for-azure-video-analyzer) and refer to the [Azure Video Analyzer documentation](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/overview). The following instructions demonstrate building and running the microservice and test client outside of Azure Video Analyzer.
 
 ## Supported Hardware
 
@@ -47,8 +47,8 @@ Building the image requires a modern Linux distro with the following packages in
 
 | |                  |
 |---------------------------------------------|------------------|
-| **Docker** | Video Analytics Serving requires Docker for it's build, development, and runtime environments. Please install the latest for your platform. [Docker](https://docs.docker.com/install). |
-| **bash** | Video Analytics Serving's build and run scripts require bash and have been tested on systems using versions greater than or equal to: `GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)`. Most users shouldn't need to update their version but if you run into issues please install the latest for your platform. Instructions for macOS&reg;* users [here](https://github.com/intel/video-analytics-serving/blob/master/docs/installing_bash_macos.md). |
+| **Docker** | Edge AI Extension requires Docker for its build, development, and runtime environments. Please install the latest for your platform. [Docker](https://docs.docker.com/install). |
+| **bash** | Edge AI Extension's build and run scripts require bash and have been tested on systems using versions greater than or equal to: `GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)`. Most users shouldn't need to update their version but if you run into issues please install the latest for your platform. Instructions for macOS&reg;* users [here](https://github.com/intel/video-analytics-serving/blob/master/docs/installing_bash_macos.md). |
 
 ### Building the Image
 
