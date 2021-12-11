@@ -1,0 +1,26 @@
+{
+    "server_params": {
+        "sleep_period":0.25,
+        "protocol": "http"
+    },
+    "client": [
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version":"person_vehicle_bike",
+                    "parameters": {
+                        "detection-model-instance-id": "object_detection_person_vehicle_bike"
+                    }
+                },
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code":1
+            }
+        }
+    ],
+    "golden_results":false
+}

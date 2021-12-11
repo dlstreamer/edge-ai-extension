@@ -1,0 +1,36 @@
+{
+    "server_params": {
+        "sleep_period":0.25,
+        "protocol": "http",
+        "enable_rtsp":true,
+        "rtsp_port":8554
+    },
+    "client": [
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version": "person_vehicle_bike",
+                    "frame-destination": {
+                        "type":"rtsp",
+                        "path":"http_rtsp_person_vehicle_bike_cpu"
+                    }
+                },
+                "rtsp":{
+                    "url" : "rtsp://localhost",
+                    "port" : 8554
+                },
+                "stream_id": "http_rtsp_person_vehicle_bike_cpu",
+                "source":"/home/edge-ai-extension/person-bicycle-car-detection.mp4",
+                "output_location": "",
+                "loop_count":1,
+                "sleep_period":5,
+                "protocol": "http",
+                "timeout":300,
+                "wait_to_complete": false,
+                "expected_return_code":1
+            }
+        }
+    ],
+    "golden_results":false
+}

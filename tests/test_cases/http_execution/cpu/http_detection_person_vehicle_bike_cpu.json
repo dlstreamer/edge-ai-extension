@@ -1,0 +1,29 @@
+{
+    "server_params": {
+        "sleep_period":0.25,
+        "protocol": "http"
+    },
+    "client": [
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_detection",
+                    "version": "person_vehicle_bike",
+                    "parameters": {
+                        "nireq": 6,
+                        "threshold": 0.7
+                    }
+                },
+                "stream_id": "http_detection_person_vehicle_bike_cpu",
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code":0
+            }
+        }
+    ],
+    "golden_results":false
+}

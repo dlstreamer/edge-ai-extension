@@ -1,0 +1,28 @@
+{
+    "server_params": {
+        "sleep_period":0.25,
+        "protocol": "http"
+    },
+    "client": [
+        {
+            "params": {
+                "pipeline": {
+                    "name":"object_classification",
+                    "version":"vehicle_attributes",
+                    "parameters": {
+                        "detection-model-instance-id": "object_classification_vehicle_attributes_http_vehicle_attributes_cpu_with_params"
+                    }
+                },
+                "stream_id" :"http_vehicle_attributes_cpu_with_params",
+                "source":"/home/edge-ai-extension/sampleframes/sample01.png",
+                "output_location": "",
+                "loop_count":10,
+                "sleep_period":0.25,
+                "protocol": "http",
+                "timeout":300,
+                "expected_return_code":0
+            }
+        }
+    ],
+    "golden_results":false
+}
