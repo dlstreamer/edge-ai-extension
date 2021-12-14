@@ -20,6 +20,7 @@ function show_help {
   echo "  [ --pytest-generate : Generate new ground truth ]"
   echo "  [ --pylint : Run pylint scan ] "
   echo "  [ --pybandit: Run pybandit scan ] "
+  echo "  [ --clamav : Run antivirus scan ] "
 }
 
 function recreate_shared_path() {
@@ -45,6 +46,10 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     --pybandit)
       ENTRYPOINT="--entrypoint ./tests/entrypoint/pybandit.sh"
+      SELECTED="$1"
+      ;;
+    --clamav)
+      ENTRYPOINT="--entrypoint ./tests/entrypoint/clamav.sh"
       SELECTED="$1"
       ;;
     --pytest-generate)

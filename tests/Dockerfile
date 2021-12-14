@@ -9,6 +9,8 @@ ARG WORKDIR=/home/edge-ai-extension
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y -q --no-install-recommends \
     python3-dev \
+    clamav \
+    clamav-daemon \
     gcc \
     wget && \
     rm -rf /var/lib/apt/lists/*
