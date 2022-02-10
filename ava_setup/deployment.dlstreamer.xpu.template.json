@@ -8,7 +8,7 @@
           "type": "docker",
           "settings": {
             "minDockerVersion": "v1.25",
-            "loggingOptions": ""              
+            "loggingOptions": ""
           }
         },
         "systemModules": {
@@ -75,13 +75,13 @@
                 }
               }
             },
-            "env" : {
-                "LOCAL_USER_ID" : {
-                    "value" : "1001"
-                },
-                "LOCAL_GROUP_ID" : {
-                    "value" : "1001"
-                }
+            "env": {
+              "LOCAL_USER_ID": {
+                "value": "1001"
+              },
+              "LOCAL_GROUP_ID": {
+                "value": "1001"
+              }
             }
           },
           "avaextension": {
@@ -98,50 +98,63 @@
                   "5001/tcp": {},
                   "8554/tcp": {}
                 },
+                "User": "1001",
                 "HostConfig": {
-                  "Binds": ["/tmp:/tmp", "/dev/bus/usb:/dev/bus/usb"],
-                  "DeviceCgroupRules": ["c 189:* rmw"],
-                  "GroupAdd": ["109"],
+                  "Binds": [
+                    "/tmp:/tmp",
+                    "/dev/bus/usb:/dev/bus/usb",
+                    "/var/tmp:/var/tmp",
+                    "/dev/shm:/dev/shm"
+                  ],
+                  "DeviceCgroupRules": [
+                    "c 189:* rmw"
+                  ],
+                  "GroupAdd": [
+                    "109",
+                    "users",
+                    "audio"
+                  ],
                   "Devices": [
                     {
                       "PathOnHost": "/dev/dri",
                       "PathInContainer": "/dev/dri",
                       "CgroupPermissions": "rwm"
-                    }],
-                    "PortBindings": {
-                        "80/tcp": [
-                            {
-                                "HostPort": "8080"
-                            }
-                        ],
-                        "8000/tcp": [
-                            {
-                                "HostPort": "8000"
-                            }
-                        ],
-                        "5001/tcp": [
-                            {
-                                "HostPort": "5001"
-                            }
-                        ],
-                        "8554/tcp": [
-                          {
-                              "HostPort": "8554"
-                          }
-                      ]
-                    },
-                    "LogConfig": {
-                        "Type": "json-file",
-                        "Config": {
-                            "max-size": "10m",
-                            "max-file": "10"
-                        }
-                    },
-                    "IpcMode": "host"
+                    }
+                  ],
+                  "PortBindings": {
+                    "80/tcp": [
+                      {
+                        "HostPort": "8080"
+                      }
+                    ],
+                    "8000/tcp": [
+                      {
+                        "HostPort": "8000"
+                      }
+                    ],
+                    "5001/tcp": [
+                      {
+                        "HostPort": "5001"
+                      }
+                    ],
+                    "8554/tcp": [
+                      {
+                        "HostPort": "8554"
+                      }
+                    ]
+                  },
+                  "LogConfig": {
+                    "Type": "json-file",
+                    "Config": {
+                      "max-size": "10m",
+                      "max-file": "10"
+                    }
+                  },
+                  "IpcMode": "host"
                 },
                 "Cmd": [
                   "--protocol",
-                  "grpc"                    
+                  "grpc"
                 ]
               }
             }
