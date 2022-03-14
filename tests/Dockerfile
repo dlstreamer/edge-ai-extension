@@ -1,4 +1,4 @@
-ARG BASE="dlstreamer-edge-ai-extension:0.7.0"
+ARG BASE="dlstreamer-edge-ai-extension:0.7.1"
 FROM ${BASE} as dlstreamer-edge-ai-extension-tests
 
 USER root
@@ -29,7 +29,7 @@ RUN wget --no-proxy -O person-bicycle-car-detection_1920_1080_2min.mp4 https://g
 
 ENV COVERAGE_RCFILE=$WORKDIR/tests/config/coveragerc
 
-ARG USER=vaserving
+ARG USER=pipeline-server
 RUN chown ${USER} -R $WORKDIR/tests
 USER ${USER}
 

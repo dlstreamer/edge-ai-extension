@@ -4,7 +4,7 @@ CURRENT_DIR=$(dirname "$(readlink -f "$0")")
 ROOT_DIR=$(dirname $CURRENT_DIR)
 
 RUN_PREFIX=
-IMAGE=dlstreamer-edge-ai-extension:0.7.0
+IMAGE=dlstreamer-edge-ai-extension:0.7.1
 VOLUME_MOUNT=" -v /tmp:/tmp -v /dev/shm:/dev/shm "
 DOCKER_DIR=/home/edge-ai-extension
 MODE=GRPC_PROTOCOL

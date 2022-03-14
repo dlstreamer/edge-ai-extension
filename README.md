@@ -2,9 +2,9 @@
 
 | [Getting Started](#getting-started) | [Edge AI Extension Server Options](#edge-ai-extension-server-options) | [Edge AI Extension Requests](#edge-ai-extension-requests)| [Edge AI Extension Client](#edge-ai-extension-client) | [Spatial Analytics](#spatial-analytics-pipelines)| [Changing Models](#updating-or-changing-detection-and-classification-models)
 
-The Intel® DL Streamer – Edge AI Extension is a microservice based on [Video Analytics Serving](https://github.com/intel/video-analytics-serving) that provides video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI Extension which performs detection, classification, or tracking and returns the results. The AI Extension exposes [gRPC](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) and [HTTP](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/http-extension-protocol) protocol APIs that are compatible with [Azure Video Analyzer](https://azure.microsoft.com/en-us/products/video-analyzer/) (AVA). Powered by OpenVINO™ toolkit, the AI Extension enables developers to build, optimize and deploy deep learning inference workloads for the best performance across Intel® architectures.
+The Intel® DL Streamer – Edge AI Extension is a microservice based on [DL Streamer Pipeline Server](https://github.com/dlstreamer/pipeline-server) that provides video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI Extension which performs detection, classification, or tracking and returns the results. The AI Extension exposes [gRPC](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) and [HTTP](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/http-extension-protocol) protocol APIs that are compatible with [Azure Video Analyzer](https://azure.microsoft.com/en-us/products/video-analyzer/) (AVA). Powered by OpenVINO™ toolkit, the AI Extension enables developers to build, optimize and deploy deep learning inference workloads for the best performance across Intel® architectures.
 
-> This document assumes a working knowledge of [Video Analytics Serving](https://github.com/intel/video-analytics-serving).
+> This document assumes a working knowledge of [DL Streamer Pipeline Server](https://github.com/dlstreamer/pipeline-server).
 
 ## Highlights
 
@@ -48,7 +48,7 @@ Building the image requires a modern Linux distro with the following packages in
 | |                  |
 |---------------------------------------------|------------------|
 | **Docker** | Edge AI Extension requires Docker for its build, development, and runtime environments. Please install the latest for your platform. [Docker](https://docs.docker.com/install). |
-| **bash** | Edge AI Extension's build and run scripts require bash and have been tested on systems using versions greater than or equal to: `GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)`. Most users shouldn't need to update their version but if you run into issues please install the latest for your platform. Instructions for macOS&reg;* users [here](https://github.com/intel/video-analytics-serving/blob/master/docs/installing_bash_macos.md). |
+| **bash** | Edge AI Extension's build and run scripts require bash and have been tested on systems using versions greater than or equal to: `GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)`. Most users shouldn't need to update their version but if you run into issues please install the latest for your platform. Instructions for macOS&reg;* users [here](https://github.com/dlstreamer/pipeline-server/blob/master/docs/installing_bash_macos.md). |
 
 ### Building the Image
 
@@ -58,7 +58,7 @@ Run the docker image build script.
 ./docker/build.sh
 ```
 
-Resulting image name is `dlstreamer-edge-ai-extension:0.7.0`
+Resulting image name is `dlstreamer-edge-ai-extension:0.7.1`
 
 ## Running the Edge AI Extension
 
@@ -164,13 +164,13 @@ The server can be configured using command line options or environment variables
 | RTSP Re-Streaming   | --enable-rtsp         | ENABLE_RTSP          | false            |
 | Logging Level       | --log-level           | EXTENSION_LOG_LEVEL  | INFO             |
 
-Command line arguments that are not supported by the server are passed to VA Serving. See [vaserving/arguments.py](https://github.com/intel/video-analytics-serving/blob/master/vaserving/arguments.py).
+Command line arguments that are not supported by the server are passed to VA Serving. See [vaserving/arguments.py](https://github.com/dlstreamer/pipeline-server/blob/master/vaserving/arguments.py).
 
 > The run_server.sh script handles container specific arguments (e.g. volume mounting).
 
 ## Enabling Inference Accelerator
 
-See [Enabling Hardware Accelerators](https://github.com/intel/video-analytics-serving/blob/master/docs/running_video_analytics_serving.md#enabling-hardware-accelerators)
+See [Enabling Hardware Accelerators](https://github.com/dlstreamer/pipeline-server/blob/master/docs/running_video_analytics_serving.md#enabling-hardware-accelerators)
 for details on configuring docker resources for supported accelerators. The run server script will automatically detect installed accelerators and provide access to their resources.
 
 ## Enabling Real Time Streaming Protocol (RTSP) Re-streaming
@@ -186,7 +186,7 @@ Pipelines can be configured to visualize input video with superimposed inference
 Run the following command to monitor the logs from the docker container
 
 ```bash
-docker logs dlstreamer-edge-ai-extension_0.7.0 -f
+docker logs dlstreamer-edge-ai-extension_0.7.1 -f
 ```
 
 ## Developer Mode
@@ -200,16 +200,16 @@ This mode runs with files from the host, not the container, which is useful for 
 
 # Edge AI Extension Requests
 
-The Edge AI Extension supports [gRPC](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) and [HTTP](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/http-extension-protocol) APIs. This sections explains how the these APIs are mapped to [VA Serving requests](https://github.com/intel/video-analytics-serving/blob/master/docs/customizing_pipeline_requests.md), which are broken into four categories.
+The Edge AI Extension supports [gRPC](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) and [HTTP](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/http-extension-protocol) APIs. This sections explains how the these APIs are mapped to [VA Serving requests](https://github.com/dlstreamer/pipeline-server/blob/master/docs/customizing_pipeline_requests.md), which are broken into four categories.
 
 - Pipeline name and version
-- [Pipeline parameters](https://github.com/intel/video-analytics-serving/blob/master/docs/customizing_pipeline_requests.md#parameters) - runtime configuration (e.g. selecting inference accelerator)
-- [Frame destination](https://github.com/intel/video-analytics-serving/blob/master/docs/customizing_pipeline_requests.md#frame) - optional destination of frames (e.g. RTSP)
+- [Pipeline parameters](https://github.com/dlstreamer/pipeline-server/blob/master/docs/customizing_pipeline_requests.md#parameters) - runtime configuration (e.g. selecting inference accelerator)
+- [Frame destination](https://github.com/dlstreamer/pipeline-server/blob/master/docs/customizing_pipeline_requests.md#frame) - optional destination of frames (e.g. RTSP)
 - Extensions - JSON Object specified at the time of request, stored with metadata.
 
 ## gRPC Requests
 
-The gRPC Server supports the extension_configuration field in the [MediaStreamDescriptor message](https://github.com/Azure/video-analyzer/blob/main/contracts/grpc/extension.proto#L69). This field contains a JSON string that must match the [extension configuration schema](common/extension_schema.py). Note that pipeline name and version fields are required but parameters, frame-destination and extensions are optional. The `parameters` field matches the parameters JSON in a [VA Serving request](https://github.com/intel/video-analytics-serving/blob/master/docs/customizing_pipeline_requests.md) and the `frame-destination` field matches the frame property in the destination part of the request. See example below.
+The gRPC Server supports the extension_configuration field in the [MediaStreamDescriptor message](https://github.com/Azure/video-analyzer/blob/main/contracts/grpc/extension.proto#L69). This field contains a JSON string that must match the [extension configuration schema](common/extension_schema.py). Note that pipeline name and version fields are required but parameters, frame-destination and extensions are optional. The `parameters` field matches the parameters JSON in a [VA Serving request](https://github.com/dlstreamer/pipeline-server/blob/master/docs/customizing_pipeline_requests.md) and the `frame-destination` field matches the frame property in the destination part of the request. See example below.
 
 ```json
 {
@@ -302,7 +302,7 @@ curl -i -X POST "localhost:8000/object_detection/person?stream-id=stream1" -H "C
 
 ### Pipeline Parameters
 
-[Pipeline parameters](https://github.com/intel/video-analytics-serving/blob/master/docs/customizing_pipeline_requests.md#parameters) can be supplied as query parameters. Only basic types are supported: string, float, int and boolean. The server will infer parameter type from its value. Remember to also supply a stream identifier. The following example uses string parameter `detection-model-instance-id` and float parameter `threshold`.
+[Pipeline parameters](https://github.com/dlstreamer/pipeline-server/blob/master/docs/customizing_pipeline_requests.md#parameters) can be supplied as query parameters. Only basic types are supported: string, float, int and boolean. The server will infer parameter type from its value. Remember to also supply a stream identifier. The following example uses string parameter `detection-model-instance-id` and float parameter `threshold`.
 
 Example URL:
 
@@ -334,7 +334,7 @@ curl -i -X POST "localhost:8000/object_detection/person?stream-id=extension-test
 
 Assuming the server is configured to support an accelerator it can be selected by setting the appropriate parameter in the request. The parameter name will be defined in the pipeline definition file, usually `detection-device`. If the pipeline supports classification or tracking then `classification-device` and `tracking-device` can also be set.
 
-See [Enabling Hardware Accelerators](https://github.com/intel/video-analytics-serving/blob/master/docs/running_video_analytics_serving.md#enabling-hardware-accelerators)
+See [Enabling Hardware Accelerators](https://github.com/dlstreamer/pipeline-server/blob/master/docs/running_video_analytics_serving.md#enabling-hardware-accelerators)
 for details on inference device name for supported accelerators.
 
 # Configuring the AI Extension for Azure Video Analyzer
@@ -436,7 +436,7 @@ Now connect and visualize using VLC network stream with url `rtsp://localhost:85
 
 ## Object Zone Count
 
-The [spatial_analytics/object_zone_count](./pipelines/spatial_analytics/object_zone_count/pipeline.json) pipeline generates events containing objects detected in zones defined by the extension configuration. For more information on the underlying zone event operation, see object_zone_count [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_zone_count.md).
+The [spatial_analytics/object_zone_count](./pipelines/spatial_analytics/object_zone_count/pipeline.json) pipeline generates events containing objects detected in zones defined by the extension configuration. For more information on the underlying zone event operation, see object_zone_count [README](https://github.com/dlstreamer/pipeline-server/blob/master/extensions/spatial_analytics/object_zone_count.md).
 
 ### Build and Run
 
@@ -482,7 +482,7 @@ To get a visual of `object_zone_count` extension, run with `object_zone_count_re
 
 ## Object Line Crossing
 
-The [spatial_analytics/object_line_crossing](./pipelines/spatial_analytics/object_line_crossing/pipeline.json) pipeline generates events containing objects which crossed lines defined by the extension configuration. For more information on the underlying line crossing operation, see object_line_crossing [README](https://github.com/intel/video-analytics-serving/blob/master/extensions/spatial_analytics/object_line_crossing.md).
+The [spatial_analytics/object_line_crossing](./pipelines/spatial_analytics/object_line_crossing/pipeline.json) pipeline generates events containing objects which crossed lines defined by the extension configuration. For more information on the underlying line crossing operation, see object_line_crossing [README](https://github.com/dlstreamer/pipeline-server/blob/master/extensions/spatial_analytics/object_line_crossing.md).
 
 ### Build and Run
 
@@ -526,8 +526,8 @@ To get a visual of `object_line_crossing` extension, run with `object_line_cross
 # Updating or Changing Detection and Classification Models
 
 Before updating the models used by a pipeline please see the format of
-[pipeline definition files](https://github.com/intel/video-analytics-serving/blob/master/docs/defining_pipelines.md) and read the
-tutorial on [changing object detection models](https://github.com/intel/video-analytics-serving/blob/master/docs/changing_object_detection_models.md).
+[pipeline definition files](https://github.com/dlstreamer/pipeline-server/blob/master/docs/defining_pipelines.md) and read the
+tutorial on [changing object detection models](https://github.com/dlstreamer/pipeline-server/blob/master/docs/changing_object_detection_models.md).
 
 Most of the steps to change models used by the Extension are the same as for the above tutorial, but it assumes you are working with the REST service and not the AI Extension module. The AI Extension specific steps are called out in the following sections.
 
@@ -626,7 +626,7 @@ models
 Check that expected model and pipeline are present in the built image:
 
 ```bash
-docker run -it --entrypoint /bin/bash dlstreamer-edge-ai-extension:0.7.0
+docker run -it --entrypoint /bin/bash dlstreamer-edge-ai-extension:0.7.1
 ```
 
 ```text
@@ -643,7 +643,7 @@ vaserving@82dd59743ca3:~$ ls pipelines/object_detection
 Restart the service to ensure we are using the image with the yolo-v2-tiny-tf model
 
 ```bash
-docker stop dlstreamer-edge-ai-extension_0.7.0
+docker stop dlstreamer-edge-ai-extension_0.7.1
 docker/run_server.sh
 ```
 

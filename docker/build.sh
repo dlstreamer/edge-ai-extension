@@ -4,11 +4,11 @@ CURRENT_DIR=$(dirname $(readlink -f "$0"))
 ROOT_DIR=$(dirname $CURRENT_DIR)
 BUILD_ARGS=$(env | cut -f1 -d= | grep -E '_(proxy|REPO|VER)$' | sed 's/^/--build-arg / ' | tr '\n' ' ')
 MODELS="$ROOT_DIR/models_list/models.list.yml"
-TAG="dlstreamer-edge-ai-extension:0.7.0"
+TAG="dlstreamer-edge-ai-extension:0.7.1"
 FORCE_MODEL_DOWNLOAD=
-VAS_BASE="video-analytics-serving-runtime:latest"
-VAS_VER="v0.7.0-beta"
-VAS_REPO="https://github.com/intel/video-analytics-serving"
+VAS_BASE="dlstreamer-pipeline-server-runtime:latest"
+VAS_VER="v0.7.1-beta"
+VAS_REPO="https://github.com/dlstreamer/pipeline-server"
 BASE_IMAGE=
 VAS_DIR=
 
@@ -68,7 +68,7 @@ function show_help {
   echo "  [ --models : Model list, must be a relative path ] "
   echo " [--force-model-download : force the download of models even if models exists] "
   echo " [--base : base image] "
-  echo " [--vas-dir : path to local video-analytics-serving directory] "
+  echo " [--vas-dir : path to local dlstreamer-pipeline-server directory] "
   echo " [--tag docker image tag] "
 }
 
@@ -85,12 +85,12 @@ function launch { echo $@
 get_options "$@"
 
 if [ ! -z "$VAS_DIR" ]; then
-    echo "Using video-analytics-serving from $VAS_DIR"
+    echo "Using dlstreamer-pipeline-server from $VAS_DIR"
 else
-    VAS_DIR="$CURRENT_DIR/.video-analytics-serving"
+    VAS_DIR="$CURRENT_DIR/.dlstreamer-pipeline-server"
     rm -rf $VAS_DIR
     mkdir -p $VAS_DIR
-    echo "Downloading video-analytics-serving from $VAS_REPO version $VAS_VER"
+    echo "Downloading dlstreamer-pipeline-server from $VAS_REPO version $VAS_VER"
     wget $VAS_REPO/tarball/$VAS_VER -P $VAS_DIR
     tar -xvf "$VAS_DIR/$VAS_VER" -C $VAS_DIR --strip-components 1 >&/dev/null
 fi
@@ -100,7 +100,7 @@ $VAS_DIR/tools/model_downloader/model_downloader.sh --model-list "$MODELS" \
       --output "$ROOT_DIR" $FORCE_MODEL_DOWNLOAD
 
 if [ -z "$BASE_IMAGE" ]; then
-    echo "Building video-analytics-serving as $VAS_BASE"
+    echo "Building dlstreamer-pipeline-server as $VAS_BASE"
     launch "$VAS_DIR/docker/build.sh --framework gstreamer --create-service false \
             --pipelines NONE --models NONE --tag $VAS_BASE"
 else
@@ -108,7 +108,7 @@ else
     BUILD_ARGS+=" --build-arg BASE=$BASE_IMAGE "
 fi
 
-rm -rf "$CURRENT_DIR/.video-analytics-serving"
+rm -rf "$CURRENT_DIR/.dlstreamer-pipeline-server"
 
 # Build AI Extention
 launch "docker build -f $CURRENT_DIR/Dockerfile $BUILD_ARGS -t $TAG $ROOT_DIR"

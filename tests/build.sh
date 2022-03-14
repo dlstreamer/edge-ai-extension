@@ -1,7 +1,7 @@
 #!/bin/bash -e
 CURRENT_DIR=$(dirname $(readlink -f "$0"))
 ROOT_DIR=$(dirname $CURRENT_DIR)
-EXTENSION_IMAGE_TAG="dlstreamer-edge-ai-extension:0.7.0"
+EXTENSION_IMAGE_TAG="dlstreamer-edge-ai-extension:0.7.1"
 TEST_IMAGE_TAG="dlstreamer-edge-ai-extension-tests"
 SAMPLE_BUILD_ARGS=$(env | cut -f1 -d= | grep -E '_(proxy|REPO|VER)$' | sed 's/^/--build-arg / ' | tr '\n' ' ')
 

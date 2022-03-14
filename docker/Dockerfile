@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-ARG BASE=video-analytics-serving-runtime
+ARG BASE=dlstreamer-pipeline-server-runtime
 FROM $BASE
 
 ARG WORKDIR=/home/edge-ai-extension
@@ -33,7 +33,7 @@ ENV PYTHONPATH=$PYTHONPATH:$WORKDIR/common/grpc_autogen
 
 WORKDIR $WORKDIR
 
-ARG USER=vaserving
+ARG USER=pipeline-server
 RUN chown ${USER} -R $WORKDIR
 USER ${USER}
 
