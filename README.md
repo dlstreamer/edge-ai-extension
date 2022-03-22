@@ -173,6 +173,40 @@ Command line arguments that are not supported by the server are passed to VA Ser
 See [Enabling Hardware Accelerators](https://github.com/dlstreamer/pipeline-server/blob/master/docs/running_video_analytics_serving.md#enabling-hardware-accelerators)
 for details on configuring docker resources for supported accelerators. The run server script will automatically detect installed accelerators and provide access to their resources.
 
+### Steps for enabling HDDL plugin for AVA
+Refer to the following steps to provide HDDL plugin access to AVA compliant gRPC/HTTP extension processor node. 
+1. Check if system has user with uid 1001. If present, skip to step 3
+```bash
+id -un -- 1001
+```
+2. Create user(e.g: hddluser) with uid 1001 
+```bash
+sudo adduser hddluser --uid 1001
+```
+3. Add user(with uid 1001) to users group 
+```bash
+sudo usermod -a -G users $(id -un -- 1001)
+```
+4. If hddldaemon was started by a user with uid not 1001, kill `hddldaemon` process
+```bash
+kill -9 $(pidof hddldaemon autoboot)
+pidof hddldaemon autoboot # Make sure none of them is alive
+```
+5. switch to user with uid 1001
+```bash
+su $(id -un -- 1001)
+```
+6. Restart `hddldaemon` 
+```bash
+source /opt/intel/openvino_2021/bin/setupvars.sh
+${HDDL_INSTALL_DIR}/bin/bsl_reset
+```
+7. Change the ownership of hddl files to user with uid 1001
+```bash
+sudo chown -R $(id -un -- 1001) /var/tmp/hddl_*
+```
+Additional troubleshooting tips are available at [HDDL troubleshooting](https://docs.openvino.ai/latest/openvino_docs_install_guides_installing_openvino_linux_ivad_vpu.html#doxid-openvino-docs-install-guides-installing-openvino-linux-ivad-vpu)
+
 ## Enabling Real Time Streaming Protocol (RTSP) Re-streaming
 
 Pipelines can be configured to visualize input video with superimposed inference results such as bounding boxes, labels etc at request time but the RTSP server must first be enabled.
