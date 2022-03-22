@@ -54,7 +54,7 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     --pytest-generate)
       ENTRYPOINT_ARGS+="--entrypoint-args --generate "
-      VOLUME_MOUNT+="-v $TESTS_DIR/test_cases:$DOCKER_TESTS_DIR/test_cases "
+      VOLUME_MOUNT+="-v $TESTS_DIR/test_cases:$DOCKER_TEST_DIR/test_cases "
       PREPARE_GROUND_TRUTH=true
       ;;
     *)
@@ -71,7 +71,7 @@ SELECTED="${SELECTED//-/}"
 LOCAL_RESULTS_DIR="$LOCAL_RESULTS_DIR/$SELECTED"
 DOCKER_RESULTS_DIR="$DOCKER_RESULTS_DIR/$SELECTED"
 recreate_shared_path "$LOCAL_RESULTS_DIR"
-VOLUME_MOUNT="-v $LOCAL_RESULTS_DIR:$DOCKER_RESULTS_DIR "
+VOLUME_MOUNT+="-v $LOCAL_RESULTS_DIR:$DOCKER_RESULTS_DIR "
 
 "$ROOT_DIR/docker/run_server.sh" --image $IMAGE -v /dev/shm:/dev/shm \
   $VOLUME_MOUNT -p 5001:5001 \
