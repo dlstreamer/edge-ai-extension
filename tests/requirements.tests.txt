@@ -4,7 +4,7 @@ pytest-cov == 2.8.1
 pytest-html == 2.1.1
 pytest-timeout == 1.4.2
 pytest-repeat == 0.9.1
-requests == 2.23.0
+requests == 2.31.0
 teamcity-messages == 1.29
 parse == 1.19.0
 pylint == 2.9.3
