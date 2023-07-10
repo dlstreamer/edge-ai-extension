@@ -1,5 +1,15 @@
 # Intel® DL Streamer – Edge AI Extension
 
+DISCONTINUATION OF PROJECT.  
+
+This project will no longer be maintained by Intel.  
+
+This project has been identified as having known security escapes.  
+
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.  
+
+Intel no longer accepts patches to this project.
+
 | [Getting Started](#getting-started) | [Edge AI Extension Server Options](#edge-ai-extension-server-options) | [Edge AI Extension Requests](#edge-ai-extension-requests)| [Edge AI Extension Client](#edge-ai-extension-client) | [Spatial Analytics](#spatial-analytics-pipelines)| [Changing Models](#updating-or-changing-detection-and-classification-models)
 
 The Intel® DL Streamer – Edge AI Extension is a microservice based on [DL Streamer Pipeline Server](https://github.com/dlstreamer/pipeline-server) that provides video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI Extension which performs detection, classification, or tracking and returns the results. The AI Extension exposes [gRPC](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/grpc-extension-protocol) and [HTTP](https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/http-extension-protocol) protocol APIs that are compatible with [Azure Video Analyzer](https://azure.microsoft.com/en-us/products/video-analyzer/) (AVA). Powered by OpenVINO™ toolkit, the AI Extension enables developers to build, optimize and deploy deep learning inference workloads for the best performance across Intel® architectures.
